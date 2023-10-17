@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB25DC22-04F2-4DA2-B0A6-EE46C573660F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TheHightSchoolOfAvellanedaSystem.Domain</RootNamespace>
+    <AssemblyName>TheHightSchoolOfAvellanedaSystem.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.1.11\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bitacora.cs" />
+    <Compile Include="Filtro.cs" />
+    <Compile Include="Control_de_Cambios.cs" />
+    <Compile Include="Domicilio.cs" />
+    <Compile Include="DV.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityState.cs" />
+    <Compile Include="Enum_Movimientos.cs" />
+    <Compile Include="Familia.cs" />
+    <Compile Include="Idioma.cs" />
+    <Compile Include="Localidad.cs" />
+    <Compile Include="Movimientos.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ficha.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioFamilia.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheHightSchoolOfAvellanedaSystem.Abstraction\TheHightSchoolOfAvellanedaSystem.Abstraction.csproj">
+      <Project>{B9B98560-62AB-44E8-A40E-202D73FCB6DA}</Project>
+      <Name>TheHightSchoolOfAvellanedaSystem.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheHightSchoolOfAvellanedaSystem.Services\TheHightSchoolOfAvellanedaSystem.Services.csproj">
+      <Project>{DDC9207B-1F6C-467F-971D-3B1E59F1D185}</Project>
+      <Name>TheHightSchoolOfAvellanedaSystem.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

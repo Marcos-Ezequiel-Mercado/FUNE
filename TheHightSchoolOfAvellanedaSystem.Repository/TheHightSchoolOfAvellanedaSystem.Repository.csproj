@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{873848E1-D6FF-4C52-8646-7CF79ED29340}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TheHightSchoolOfAvellanedaSystem.Repository</RootNamespace>
+    <AssemblyName>TheHightSchoolOfAvellanedaSystem.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.1.11\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackupRepository.cs" />
+    <Compile Include="BitacoraRepository.cs" />
+    <Compile Include="ControlDeCambiosRepository.cs" />
+    <Compile Include="DVRepository.cs" />
+    <Compile Include="FamiliaRepository.cs" />
+    <Compile Include="IBitacoraRepository.cs" />
+    <Compile Include="IdiomaRepository.cs" />
+    <Compile Include="IDVRepository.cs" />
+    <Compile Include="IFamiliaRepository.cs" />
+    <Compile Include="IGenericRepository.cs" />
+    <Compile Include="IIdiomaRepository.cs" />
+    <Compile Include="ILocalidadRepository.cs" />
+    <Compile Include="IMovimientosReposotory.cs" />
+    <Compile Include="IFichasRepository.cs" />
+    <Compile Include="IUsuarioFamiliaRepository.cs" />
+    <Compile Include="IUsuarioRepository.cs" />
+    <Compile Include="LocalidadRepository.cs" />
+    <Compile Include="MovimientosRepository.cs" />
+    <Compile Include="RestoreRepository.cs" />
+    <Compile Include="FichasRepository.cs" />
+    <Compile Include="UsuarioFamiliaRepository.cs" />
+    <Compile Include="UsuarioRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TheHightSchoolOfAvellanedaSystem.DataAccess\TheHightSchoolOfAvellanedaSystem.DataAccess.csproj">
+      <Project>{4b7cfdb3-465e-4ddf-897a-6b599f349bdc}</Project>
+      <Name>TheHightSchoolOfAvellanedaSystem.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheHightSchoolOfAvellanedaSystem.Domain\TheHightSchoolOfAvellanedaSystem.Domain.csproj">
+      <Project>{fb25dc22-04f2-4da2-b0a6-ee46c573660f}</Project>
+      <Name>TheHightSchoolOfAvellanedaSystem.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheHightSchoolOfAvellanedaSystem.Services\TheHightSchoolOfAvellanedaSystem.Services.csproj">
+      <Project>{ddc9207b-1f6c-467f-971d-3b1e59f1d185}</Project>
+      <Name>TheHightSchoolOfAvellanedaSystem.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
