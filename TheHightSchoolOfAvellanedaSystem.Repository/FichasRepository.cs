@@ -18,6 +18,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
         public FichasRepository()
         {
             procesoBusquedaDeFichas = "SP_GET_FICHAS";
+            procesoEditarDeFichas = "SP_INSERT_UPDATE_FICHAS";
         }
         public int Add(Ficha entity)
         {
@@ -87,11 +88,42 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
             };
         }
 
-        private Object crearParametrosParaEditarFichas(Ficha filtro)
+        private Object crearParametrosParaEditarFichas(Ficha ficha)
         {
             return new
             {
-               
+               // ficha.Usuario,
+                ficha.Id,
+                ficha.Nombre,
+                ficha.Sexo,
+                ficha.Estudios,
+                ficha.FechaDeNacimiento,
+                ficha.FechaDeFallecimiento,
+                ficha.HoraDeFallecimiento,
+                ficha.Edad,
+                ficha.LugarDeFallecimiento,
+                ficha.EstadoCivil,
+                ficha.Conyugue,
+                ficha.Padre,
+                ficha.Madre,
+                ficha.Domicilio,
+                ficha.Partido,
+                ficha.Nacionalidad,
+                ficha.Provincia,
+                ficha.Documento,
+                ficha.Profesion,
+                ficha.Medico,
+                ficha.Diagnostico,
+                ficha.RegistroCivil,
+                ficha.Cementerio,
+                ficha.HoraInh,
+                ficha.Gastos,
+                ficha.Beneficios,
+                ficha.Usuario,
+                ficha.Domicilio2,
+                ficha.CodigoPostal,
+                ficha.Documento2,
+                ficha.TipoAtaud
             };
         }
     }

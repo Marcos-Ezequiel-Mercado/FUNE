@@ -131,6 +131,45 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
             FechaBaja = fechaBaja;
         }
 
+        public Ficha(int id, string nombre, string sexo, string fechaDeFallecimiento, string horaDeFallecimiento,
+           string lugarDeFallecimiento, string fechaDeNacimiento, string edad, string estudios, string estadoCivil, string conyugue, string padre,
+           string madre, string domicilio, string partido, string nacionalidad, string provincia, string documento, string profesion, string medico,
+           string diagnostico, string registroCivil, string cementerio, string domicilio2, string codigoPostal, string documento2,
+           string beneficios, string gastos,  string horaInh,  string usuario, string tipoAtaud)
+        {
+            Id = id;
+            Nombre = nombre;
+            Sexo = sexo;
+            FechaDeFallecimiento = fechaDeFallecimiento;
+            HoraDeFallecimiento = horaDeFallecimiento;
+            LugarDeFallecimiento = lugarDeFallecimiento;
+            FechaDeNacimiento = fechaDeNacimiento;
+            Edad = edad;
+            Estudios = estudios;
+            EstadoCivil = estadoCivil;
+            Conyugue = conyugue;
+            Padre = padre;
+            Madre = madre;
+            Domicilio = domicilio;
+            Partido = partido;
+            Nacionalidad = nacionalidad;
+            Provincia = provincia;
+            Documento = documento;
+            Profesion = profesion;
+            Medico = medico;
+            Diagnostico = diagnostico;
+            RegistroCivil = registroCivil;
+            Cementerio = cementerio;
+            Domicilio2 = domicilio2;
+            CodigoPostal = codigoPostal;
+            Documento2 = documento2;
+            Beneficios = beneficios;
+            Gastos = gastos;           
+            HoraInh = horaInh;            
+            Usuario = usuario;
+            TipoAtaud = tipoAtaud;     
+        }
+
         public int Id { get ; set; }
         public string Total { get => total; set => total = value; }
         public string Nombre { get => nombre; set => nombre = value; }

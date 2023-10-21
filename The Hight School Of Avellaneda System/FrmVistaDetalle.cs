@@ -72,7 +72,7 @@ namespace The_Hight_School_Of_Avellaneda_System
             lblAnuncios.Text = ficha.Anuncios.ToString();
             lblEmbarazos.Text = ficha.Embarazos.ToString();
             lblSitConyugal.Text = ficha.SitConyugal.ToString();
-            lblTipoAtaud.Text = ficha.TipoAtaud.ToString();
+            txtTipoAtaud.Text = ficha.TipoAtaud.ToString();
             lblEdadMadre.Text = ficha.EdadMadre.ToString();
             lblVivos.Text = ficha.Vivos.ToString();
             lblFechaBaja.Text = ficha.FechaBaja.ToString();
@@ -123,7 +123,7 @@ namespace The_Hight_School_Of_Avellaneda_System
         {
             Ficha ficha = new Ficha(
             Convert.ToInt32(lblId.Text),
-            lblTotal.Text,
+            
             txtNombre.Text,
             txtSexo.Text,
             txtFechaFallecimiento.Text,
@@ -146,36 +146,14 @@ namespace The_Hight_School_Of_Avellaneda_System
             txtDiagnostico.Text,
             txtRegistroCivil.Text,
             txtCementerio.Text,
-            lblEdadMadre.Text,
-            lblEmbarazos.Text,
-            lblSitConyugal.Text,
-            lblVivos.Text,
-            lblMuertos.Text,
-            lblPesoNaci.Text,
-            lblPesoFalle.Text,
-            txtApellido.Text,
             txtdomicilio2.Text,
             txtCodigoPostal.Text,
-            txtDocumento2.Text,
-            txtObservacion.Text,
-            lblAtaud.Text,
-            lblMortaja.Text,
-            lblFunebre.Text,
-            lblVelatorio.Text,
-            lblAzafata.Text,
-            lblLacayos.Text,
-            lblPortac.Text,
-            lblRemises.Text,
-            lblServre.Text,
-            lblAnuncios.Text,
+            txtDocumento2.Text,  
             txtBeneficios.Text,
             txtGastos.Text,
-            txtImporte.Text,
             txtHoraInh.Text,
-            txtFechaInh.Text,
             txtUsuario.Text,
-            lblTipoAtaud.Text,
-            lblFechaBaja.Text);
+            txtTipoAtaud.Text);
 
             return ficha;
         }
