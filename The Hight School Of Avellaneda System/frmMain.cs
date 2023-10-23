@@ -1,7 +1,13 @@
 ﻿using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Windows.Media;
+using System.Windows.Media.TextFormatting;
+using FontAwesome.Sharp;
 using TheHightSchoolOfAvellanedaSystem.AplicationService;
 using TheHightSchoolOfAvellanedaSystem.Services;
+using Color = System.Drawing.Color;
 
 namespace The_Hight_School_Of_Avellaneda_System
 {
@@ -10,34 +16,103 @@ namespace The_Hight_School_Of_Avellaneda_System
         //MODIFICADO
         UsuarioAppService _usuarios;
         LoginAppService _login;
+
         public int idUsuarioEnSesion;
         public long dniUsuarioEnSesion;
 
-        private int childFormNumber = 0;
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
+        private Form currentFormChildren;
+
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         public frmMain()
         {
             InitializeComponent();
+            this.leftBorderBtn = new Panel();
+            this.leftBorderBtn.Size = new Size(7, 60);
+            this.panelMenu.Controls.Add(this.leftBorderBtn);
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
           //  ValidarFormulario();
             _usuarios= new UsuarioAppService();
             _login = new LoginAppService();
         }
 
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private struct RGBColors
         {
-            _login.Logout();
-            ValidarFormulario();
+            public static Color color1 = Color.FromArgb(172,126,241);
+            public static Color color2 = Color.FromArgb(249,118,176);
+            public static Color color3 = Color.FromArgb(253,138,114);
+            public static Color color4 = Color.FromArgb(95,77,221);
+            public static Color color5 = Color.FromArgb(249,88,155);
+            public static Color color6 = Color.FromArgb(24,161,251);
+        }
+        private void activeBotton(Object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                this.disabledButton();
+
+                currentBtn = (IconButton)senderBtn;
+                currentBtn.BackColor = Color.DarkSlateBlue;
+                currentBtn.ForeColor = color;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+
+                //LEDT BORDER BUTTON
+                leftBorderBtn.BackColor = color;
+                leftBorderBtn.Location = new Point(0,currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
+
+                //LBLICONHIJO
+                iconFormularioHijoAActual.IconChar = currentBtn.IconChar;
+                iconFormularioHijoAActual.IconColor = color;
+
+            }
         }
 
-        private void buscarMenuItem_Click(object sender, EventArgs e)
+        public void abrirFormularioHijo(Form children)
         {
-            FrmGrillaBusqueda frm = new FrmGrillaBusqueda();
-            frm.MdiParent = this;
-            frm.Show();
+            if (currentFormChildren != null)
+            {
+                currentFormChildren.Close();
+            }
+            currentFormChildren = children;
+            children.TopLevel = false;
+            children.FormBorderStyle = FormBorderStyle.None;
+            children.Dock= DockStyle.Fill;
+            panelEscritrio.Controls.Add(children);
+            panelEscritrio.Tag = children;
+            children.BringToFront();
+            children.Show();
+            lblIconoHijo.Text = children.Text;
         }
 
-        public void ValidarFormulario()
+        private void disabledButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
+      
+
+     /*   public void ValidarFormulario()
         {
             if (!ManejadorDeSesion.GetInstance.IsLogged())
                 this.toolStripStatusLabel.Text = "Por favor, inicie sesión.";
@@ -52,18 +127,7 @@ namespace The_Hight_School_Of_Avellaneda_System
             }
             this.logoutToolStripMenuItem.Enabled = ManejadorDeSesion.GetInstance.IsLogged();
             this.buscarToolStripMenuItem.Enabled = ManejadorDeSesion.GetInstance.IsLogged();
-        }
-
-        
-
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
-            childForm.Show();
-        }
-
+        }*/
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -90,13 +154,13 @@ namespace The_Hight_School_Of_Avellaneda_System
             LayoutMdi(MdiLayout.ArrangeIcons);
         }
 
-        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
+       /* private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form childForm in MdiChildren)
             {
                 childForm.Close();
             }
-        }
+        }*/
 
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -104,14 +168,70 @@ namespace The_Hight_School_Of_Avellaneda_System
         }
 
 
-        public void validarPermisosMenu()
+     /*   public void validarPermisosMenu()
         {
             this.buscarToolStripMenuItem.Visible = ManejadorDeSesion.GetInstance.IsInRole(TipoPermiso.preceptoria);
             this.buscarToolStripMenuItem.Visible = ManejadorDeSesion.GetInstance.IsInRole(TipoPermiso.seguridad);
 
+        }*/
+
+        private void crearFichaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarFicha frm = new AgregarFicha(this);
+            frm.ShowDialog();
+            this.Hide();
         }
 
-     
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            activeBotton(sender, RGBColors.color1);
+            abrirFormularioHijo(new AgregarFicha(this));
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            activeBotton(sender, RGBColors.color1);
+            abrirFormularioHijo(new FrmGrillaBusqueda(this));
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            activeBotton(sender, RGBColors.color1);
+            Application.Exit();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.currentFormChildren.Close();
+            this.disabledButton();
+            leftBorderBtn.Visible = false;
+            iconFormularioHijoAActual.IconChar = IconChar.Home;
+            iconFormularioHijoAActual.IconColor = Color.MediumPurple;
+            lblIconoHijo.Text = "HOME";
+        }
+
+        private void barraSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal) 
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 
 }

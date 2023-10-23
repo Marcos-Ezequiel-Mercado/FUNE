@@ -73,8 +73,6 @@ namespace TheHightSchoolOfAvellanedaSystem.DataAccess
                 try
                 {
                     connection.Open();
-
-                    // Llamamos al stored procedure usando ORM Dapper
                     var resultados = connection
                         .Query<T>(storedProcedure,parameters, commandType: CommandType.StoredProcedure)
                         .ToList();
@@ -100,17 +98,37 @@ namespace TheHightSchoolOfAvellanedaSystem.DataAccess
                 try
                 {
                     connection.Open();
-
-                    // Llamamos al stored procedure usando ORM Dapper
                     int rowsAffected = connection.Execute(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
-
-                    // Si rowsAffected es mayor que 0, significa que se editó al menos una entidad con éxito.
-                    return rowsAffected > 0;
+                    return rowsAffected != null;
                 }
                 catch (Exception ex)
                 {
-                    // Puedes manejar la excepción aquí, por ejemplo, registrarla o relanzarla.
                     throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public bool CreateEntity<T>(string storedProcedure, Object parameters)
+        {
+            using (var connection = GetConnectionSeguridad())
+            {
+                try
+                {
+                    connection.Open();
+                    int rowsAffected = connection.Execute(storedProcedure, parameters, commandType: CommandType.StoredProcedure);
+                    return rowsAffected != null;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }

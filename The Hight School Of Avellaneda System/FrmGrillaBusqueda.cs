@@ -17,18 +17,24 @@ namespace The_Hight_School_Of_Avellaneda_System
     public partial class FrmGrillaBusqueda : Form
     {
         private FichasService servicioDeBusqueda;
-
-        public FrmGrillaBusqueda()
+        private frmMain frmPrincipal;
+        public FrmGrillaBusqueda(frmMain frmMain)
         {
             InitializeComponent();
             servicioDeBusqueda = new FichasService();
+            lblCantResultados.Text = "0  fichas.";
+            this.frmPrincipal = frmMain;
+            btnBuscar.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Filtro filtro = this.crearObjetoFiltro();
+            this.cargarGrilla(filtro);
+        }
 
+        public void cargarGrilla(Filtro filtro)
+        {
             DataTable tablaDeDatos = servicioDeBusqueda.buscarConFiltro(filtro);
 
             if (tablaDeDatos != null)
@@ -43,10 +49,9 @@ namespace The_Hight_School_Of_Avellaneda_System
                     }
 
                 }
-            
+                this.lblCantResultados.Text = dgvGrillaResultados.RowCount.ToString() + "  fichas.";
                 this.LimpiarTextBoxEnControles(this);
-            }         
-
+            }
         }
 
         private Filtro crearObjetoFiltro()
@@ -100,8 +105,9 @@ namespace The_Hight_School_Of_Avellaneda_System
 
                     Ficha resultado = this.crearResultadoDesdeUnRegistro(row);
 
-                    FrmVistaDetalle frmDetallesDeFicha = new FrmVistaDetalle(resultado);
-                    frmDetallesDeFicha.Show();
+                    FrmVistaDetalle frmDetallesDeFicha = new FrmVistaDetalle(resultado,this);
+                    frmPrincipal.abrirFormularioHijo(frmDetallesDeFicha);
+                    
                 }
         }
 
@@ -136,6 +142,104 @@ namespace The_Hight_School_Of_Avellaneda_System
             DataTable dt = new DataTable();
             PropertyInfo[] propertyInfos = typeof(T).GetProperties();
             return propertyInfos;
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+            
+                txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "" )
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtConyugue_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtDocumento_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtFallecimiento_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtMadre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtPadre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtDomicilio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
         }
     }
 }
