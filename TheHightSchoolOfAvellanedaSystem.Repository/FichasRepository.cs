@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TheHightSchoolOfAvellanedaSystem.DataAccess;
 using TheHightSchoolOfAvellanedaSystem.Domain;
+using TheHightSchoolOfAvellanedaSystem.Services;
 
 namespace TheHightSchoolOfAvellanedaSystem.Repository
 {
@@ -15,10 +16,15 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
     {
         private String procesoBusquedaDeFichas;
         private String procesoEditarDeFichas;
+        private String procesoBajaLogica;
         public FichasRepository()
         {
+            // procedimiento guardados.
             procesoBusquedaDeFichas = "SP_GET_FICHAS";
             procesoEditarDeFichas = "SP_INSERT_UPDATE_FICHAS";
+
+            // nuevo Matias.
+            procesoBajaLogica = "SP_ELIMINAR_FICHAS";
         }
         public int Add(Ficha entity)
         {
@@ -43,7 +49,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
                 MasterConexion master = new MasterConexion();
 
                 var parametros = this.crearParametrosParaEditarFichas(ficha);
-
+                // parece que aqui hace una actualizacion con un procedimiento guardado.
                 bool exito = master.EditEntity<Ficha>(procesoEditarDeFichas, parametros);
 
                 return exito;
@@ -54,6 +60,52 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
                 throw ex;
             }
         }
+
+        //================
+        // nuevo Matias.
+        public bool Baja(Ficha ficha, int idUsuario)
+        {
+            try
+            {
+
+                MasterConexion master = new MasterConexion();
+
+                // tomo parametros para la baja logica.
+                var parametros = this.ParametroBajaLogica(ficha,idUsuario);
+                // utilizo la clase EditEntity para la baja logica.
+                bool exito = master.EditEntity<Ficha>(procesoBajaLogica, parametros);
+
+                return exito;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        //====================
+        private Object ParametroBajaLogica(Ficha ficha, int idUsuario)
+        {
+            return new
+            {
+                @USUARIO = Convert.ToString(idUsuario),
+                @ID_FICHA = ficha.Id
+            };
+        }
+
+        // nuevo 2.
+        //public int baja2(Ficha ficha)
+        //{
+        //    int resultados;
+        //    MasterConexion master = new MasterConexion();
+        //    SqlCommand cmd = new SqlCommand();
+        //    cmd.CommandText = procesoBajaLogica.ToString();
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int)).Value = ficha.Id;
+        //    cmd.Parameters.Add(new SqlParameter("@fecha_elim", SqlDbType.NVarChar)).Value = ficha.FechaDeFallecimiento;
+        //    return resultados= master.ExecuteNonQuery(cmd);
+        //}
+        //============================
 
 
         public List<Ficha> listarFichasSegunFiltro(Filtro filtro)
@@ -126,5 +178,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
                 ficha.TipoAtaud
             };
         }
+
+  
     }
 }

@@ -24,6 +24,7 @@ namespace The_Hight_School_Of_Avellaneda_System
             servicioDeBusqueda = new FichasService();
         }
 
+        // boton buscar.
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -101,10 +102,27 @@ namespace The_Hight_School_Of_Avellaneda_System
                     Ficha resultado = this.crearResultadoDesdeUnRegistro(row);
 
                     FrmVistaDetalle frmDetallesDeFicha = new FrmVistaDetalle(resultado);
+                    // con esta line se carga la grilla una ves cerrado el formulario vistadetalle.
+                    frmDetallesDeFicha.FormClosed += cargar_grilla_reg_ant;
+                    
                     frmDetallesDeFicha.Show();
                 }
         }
+        //============
+        // nuevo Matias.
+        /*llamo el metodo cargar grilla para que cuando se cierra el formulario vista detalla
+         se haga click en el boton busqueda para cargar la grilla.*/
+        private void cargar_grilla_reg_ant(Object sender, FormClosedEventArgs e)
+        {
+            btnBuscar.PerformClick();
+        }
+        //==============
+        private void FrmDetallesDeFicha_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
+        
 
 
         private Ficha crearResultadoDesdeUnRegistro(DataGridViewRow row)

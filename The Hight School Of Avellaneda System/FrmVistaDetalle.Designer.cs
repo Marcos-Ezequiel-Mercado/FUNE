@@ -614,8 +614,9 @@
             this.lblId.AutoSize = true;
             this.lblId.Location = new System.Drawing.Point(84, 28);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(0, 13);
+            this.lblId.Size = new System.Drawing.Size(15, 13);
             this.lblId.TabIndex = 53;
+            this.lblId.Text = "id";
             // 
             // label54
             // 
@@ -1024,7 +1025,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(754, 760);
+            this.btnEditar.Location = new System.Drawing.Point(754, 683);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(129, 23);
             this.btnEditar.TabIndex = 107;
@@ -1034,7 +1035,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(929, 760);
+            this.btnEliminar.Location = new System.Drawing.Point(929, 683);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(133, 23);
             this.btnEliminar.TabIndex = 108;
@@ -1044,7 +1045,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(754, 721);
+            this.btnGuardar.Location = new System.Drawing.Point(754, 654);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(308, 23);
             this.btnGuardar.TabIndex = 109;
@@ -1079,7 +1080,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 799);
+            this.ClientSize = new System.Drawing.Size(1085, 749);
             this.Controls.Add(this.txtTipoAtaud);
             this.Controls.Add(this.txtHoraFalle);
             this.Controls.Add(this.label5);

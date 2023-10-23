@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheHightSchoolOfAvellanedaSystem.Domain;
+using TheHightSchoolOfAvellanedaSystem.Services;
 
 namespace The_Hight_School_Of_Avellaneda_System
 {
@@ -15,6 +16,8 @@ namespace The_Hight_School_Of_Avellaneda_System
     {
 
         private FichasService fichaService;
+        // nuevo Matias.
+        private String fecha_baja;
 
         public FrmVistaDetalle(Ficha ficha)
         {
@@ -105,10 +108,21 @@ namespace The_Hight_School_Of_Avellaneda_System
 
         }
 
+        // baja logica de la tabla FUNE.
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-        }
+            Ficha ficha = new Ficha();
+            // agrego en ficha el id.
+            ficha.Id = Convert.ToInt32(this.lblId.Text);
+            
+            int usuarioId = ManejadorDeSesion.GetInstance.Session.Id;
+            this.fichaService.Baja(ficha,usuarioId);
+            // doy mensaje cuando se completa la operacion.
+            MessageBox.Show("Se realizo la baja", "Baja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // cierro formulario.
+            this.Close();   
+           
+        }      
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {

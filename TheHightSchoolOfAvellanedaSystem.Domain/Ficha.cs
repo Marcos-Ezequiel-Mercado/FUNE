@@ -63,10 +63,14 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
         private string tipoAtaud;
         private string fechaBaja;
 
+        
         public Ficha()
-        {
+        {          
         }
-
+        //===================
+        // prueba.
+        
+        //======================
         public Ficha(int id, string total, string nombre, string sexo, string fechaDeFallecimiento, string horaDeFallecimiento,
             string lugarDeFallecimiento, string fechaDeNacimiento, string edad, string estudios, string estadoCivil, string conyugue, string padre, 
             string madre, string domicilio, string partido, string nacionalidad, string provincia, string documento, string profesion, string medico,
