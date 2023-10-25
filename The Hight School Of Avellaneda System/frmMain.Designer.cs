@@ -60,7 +60,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(234, 805);
+            this.panelMenu.Size = new System.Drawing.Size(234, 749);
             this.panelMenu.TabIndex = 4;
             // 
             // iconButton3
@@ -74,7 +74,7 @@
             this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 745);
+            this.iconButton3.Location = new System.Drawing.Point(0, 689);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton3.Size = new System.Drawing.Size(234, 60);
@@ -160,7 +160,7 @@
             this.barraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraSuperior.Location = new System.Drawing.Point(234, 0);
             this.barraSuperior.Name = "barraSuperior";
-            this.barraSuperior.Size = new System.Drawing.Size(1237, 73);
+            this.barraSuperior.Size = new System.Drawing.Size(1136, 73);
             this.barraSuperior.TabIndex = 5;
             this.barraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraSuperior_MouseDown);
             // 
@@ -172,7 +172,7 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ArrowsToCircle;
             this.iconPictureBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(1182, 23);
+            this.iconPictureBox1.Location = new System.Drawing.Point(1081, 23);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox1.TabIndex = 4;
@@ -208,7 +208,7 @@
             this.shadowsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.shadowsPanel.Location = new System.Drawing.Point(234, 73);
             this.shadowsPanel.Name = "shadowsPanel";
-            this.shadowsPanel.Size = new System.Drawing.Size(1237, 11);
+            this.shadowsPanel.Size = new System.Drawing.Size(1136, 11);
             this.shadowsPanel.TabIndex = 7;
             // 
             // panelEscritrio
@@ -218,7 +218,7 @@
             this.panelEscritrio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritrio.Location = new System.Drawing.Point(234, 84);
             this.panelEscritrio.Name = "panelEscritrio";
-            this.panelEscritrio.Size = new System.Drawing.Size(1237, 721);
+            this.panelEscritrio.Size = new System.Drawing.Size(1136, 665);
             this.panelEscritrio.TabIndex = 8;
             // 
             // panel1
@@ -227,14 +227,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 721);
+            this.panel1.Size = new System.Drawing.Size(10, 665);
             this.panel1.TabIndex = 0;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1471, 805);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelEscritrio);
             this.Controls.Add(this.shadowsPanel);
             this.Controls.Add(this.barraSuperior);

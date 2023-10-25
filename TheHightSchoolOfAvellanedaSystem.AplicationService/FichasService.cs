@@ -29,6 +29,18 @@ public class FichasService
 		
 	}
 
+    // nuevo Matias.
+    public DataTable vistaHistorico(string idRegistro)
+    {
+        List<Ficha> resultado = repository.Historico(idRegistro);
+
+        if (resultado == null || !resultado.Any())
+        {
+            System.Windows.Forms.MessageBox.Show("No se encontraron resultados con este ID: " + idRegistro);
+        }
+        return this.cargarDataTable(resultado);
+    }
+
     public bool editarFichaService(Ficha ficha)
     {
         try
