@@ -21,6 +21,10 @@ namespace The_Hight_School_Of_Avellaneda_System
         {
             _login= new LoginAppService();
             InitializeComponent();
+
+            this.KeyPreview = true;
+            this.KeyDown += BtnIngresar_KeyDown;
+            this.KeyDown += FrmLogin_KeyDown;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -35,9 +39,10 @@ namespace The_Hight_School_Of_Avellaneda_System
             {
                 _login.Login(this.txtUsername.Text, this.txtPassword.Text);
                 
-                frmMain frm = new frmMain();                               
-                frm.ShowDialog();
+                frmMain frm = new frmMain();
                 this.Hide();
+                frm.ShowDialog();               
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -105,6 +110,24 @@ namespace The_Hight_School_Of_Avellaneda_System
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnIngresar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                BtnIngresar.PerformClick();
+            }
+        }
+
+        private void FrmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                this.Close();
+            }
         }
     }
 }

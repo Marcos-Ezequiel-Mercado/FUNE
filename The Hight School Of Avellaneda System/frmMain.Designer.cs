@@ -40,12 +40,14 @@
             this.iconFormularioHijoAActual = new FontAwesome.Sharp.IconPictureBox();
             this.shadowsPanel = new System.Windows.Forms.Panel();
             this.panelEscritrio = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.barraSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFormularioHijoAActual)).BeginInit();
+            this.panelEscritrio.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -58,7 +60,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(234, 733);
+            this.panelMenu.Size = new System.Drawing.Size(234, 805);
             this.panelMenu.TabIndex = 4;
             // 
             // iconButton3
@@ -72,7 +74,7 @@
             this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 673);
+            this.iconButton3.Location = new System.Drawing.Point(0, 745);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.iconButton3.Size = new System.Drawing.Size(234, 60);
@@ -82,6 +84,7 @@
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = true;
             this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            this.iconButton3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.iconButton3_KeyDown);
             // 
             // iconButton2
             // 
@@ -129,6 +132,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel2.Controls.Add(this.btnHome);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -138,11 +142,11 @@
             // 
             // btnHome
             // 
-            this.btnHome.Image = global::The_Hight_School_Of_Avellaneda_System.Properties.Resources.WhatsApp_Image_2023_10_22_at_13_32_02;
-            this.btnHome.Location = new System.Drawing.Point(44, 23);
+            this.btnHome.Image = global::The_Hight_School_Of_Avellaneda_System.Properties.Resources.WhatsApp_Image_2023_10_22_at_13_32_22;
+            this.btnHome.Location = new System.Drawing.Point(-14, -17);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(142, 95);
-            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnHome.Size = new System.Drawing.Size(248, 177);
+            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.btnHome.TabIndex = 0;
             this.btnHome.TabStop = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -156,7 +160,7 @@
             this.barraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraSuperior.Location = new System.Drawing.Point(234, 0);
             this.barraSuperior.Name = "barraSuperior";
-            this.barraSuperior.Size = new System.Drawing.Size(803, 73);
+            this.barraSuperior.Size = new System.Drawing.Size(1237, 73);
             this.barraSuperior.TabIndex = 5;
             this.barraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraSuperior_MouseDown);
             // 
@@ -168,7 +172,7 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ArrowsToCircle;
             this.iconPictureBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(748, 23);
+            this.iconPictureBox1.Location = new System.Drawing.Point(1182, 23);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox1.TabIndex = 4;
@@ -200,44 +204,57 @@
             // 
             // shadowsPanel
             // 
-            this.shadowsPanel.BackColor = System.Drawing.Color.Black;
+            this.shadowsPanel.BackColor = System.Drawing.SystemColors.ControlLight;
             this.shadowsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.shadowsPanel.Location = new System.Drawing.Point(234, 73);
             this.shadowsPanel.Name = "shadowsPanel";
-            this.shadowsPanel.Size = new System.Drawing.Size(803, 11);
+            this.shadowsPanel.Size = new System.Drawing.Size(1237, 11);
             this.shadowsPanel.TabIndex = 7;
             // 
             // panelEscritrio
             // 
             this.panelEscritrio.BackColor = System.Drawing.Color.SlateBlue;
+            this.panelEscritrio.Controls.Add(this.panel1);
             this.panelEscritrio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritrio.Location = new System.Drawing.Point(234, 84);
             this.panelEscritrio.Name = "panelEscritrio";
-            this.panelEscritrio.Size = new System.Drawing.Size(803, 649);
+            this.panelEscritrio.Size = new System.Drawing.Size(1237, 721);
             this.panelEscritrio.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 721);
+            this.panel1.TabIndex = 0;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 733);
+            this.ClientSize = new System.Drawing.Size(1471, 805);
             this.Controls.Add(this.panelEscritrio);
             this.Controls.Add(this.shadowsPanel);
             this.Controls.Add(this.barraSuperior);
             this.Controls.Add(this.panelMenu);
             this.IsMdiContainer = true;
             this.Name = "frmMain";
-            this.Opacity = 0.95D;
+            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FUNERARIA";
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.barraSuperior.ResumeLayout(false);
             this.barraSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFormularioHijoAActual)).EndInit();
+            this.panelEscritrio.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -255,6 +272,7 @@
         private System.Windows.Forms.Panel shadowsPanel;
         private System.Windows.Forms.Panel panelEscritrio;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

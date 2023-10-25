@@ -44,6 +44,10 @@ namespace The_Hight_School_Of_Avellaneda_System
           //  ValidarFormulario();
             _usuarios= new UsuarioAppService();
             _login = new LoginAppService();
+
+            this.KeyPreview = true;
+            this.KeyDown += frmMain_KeyDown;
+            this.KeyDown += iconButton3_KeyDown;
         }
 
         private struct RGBColors
@@ -197,10 +201,17 @@ namespace The_Hight_School_Of_Avellaneda_System
         private void iconButton3_Click(object sender, EventArgs e)
         {
             activeBotton(sender, RGBColors.color1);
-            Application.Exit();
+
+            this.salir();
+           
         }
 
         private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.volverAlHome();
+        }
+
+        public void volverAlHome()
         {
             this.currentFormChildren.Close();
             this.disabledButton();
@@ -231,6 +242,34 @@ namespace The_Hight_School_Of_Avellaneda_System
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void salir()
+        {
+            DialogResult result = MessageBox.Show("¿Deseas salir de la aplicacion?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.Alt && e.KeyCode == Keys.O)
+            {
+                // Aquí, abre el formulario que desees
+                frmAgregarUsuario form2 = new frmAgregarUsuario();
+                form2.Show();
+            }
+        }
+
+        private void iconButton3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.salir();
+            }
         }
     }
 

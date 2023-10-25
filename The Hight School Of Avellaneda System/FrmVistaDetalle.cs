@@ -16,15 +16,19 @@ namespace The_Hight_School_Of_Avellaneda_System
     {
 
         private FichasService fichaService;
-        private FrmGrillaBusqueda frmGrillaBusqueda;
+        private frmMain main;
 
-        public FrmVistaDetalle(Ficha ficha, FrmGrillaBusqueda frmGrillaBusqueda)
+        public FrmVistaDetalle(Ficha ficha, frmMain main)
         {
-
-            this.frmGrillaBusqueda = frmGrillaBusqueda;
             this.fichaService = new FichasService();
+            this.main = main;
 
-            InitializeComponent();            
+            InitializeComponent();
+
+            this.KeyPreview = true;
+            this.KeyDown += btnGuardar_KeyDown;
+            this.KeyDown += btnEditar_KeyDown;
+            this.KeyDown += button1_KeyDown;
 
             lblId.Text = ficha.Id.ToString();       
             txtNombre.Text = ficha.Nombre.ToString();
@@ -73,80 +77,13 @@ namespace The_Hight_School_Of_Avellaneda_System
                 if (childControl is TextBox)
                 {
                     TextBox textBox = (TextBox)childControl;
-                    textBox.Enabled = enabled; 
+                    textBox.Enabled = enabled;
                 }
                 else if (childControl.HasChildren)
                 {
-                    activarTodosLosTextBox(childControl,enabled);
+                    activarTodosLosTextBox(childControl, enabled);
                 }
             }
-        }
-      
-        private void FrmVistaDetalle_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Filtro filtro = new Filtro();
-
-            if (txtNombre.Text != null)
-            {
-                filtro.nombre = txtNombre.Text;
-            }
-            else
-            {
-                filtro.nombre = "";
-            }
-            if (txtPadre.Text != null)
-            {
-                filtro.padre = txtPadre.Text;
-            }
-            else
-            {
-                filtro.padre = "";
-            }
-            if (txtMadre.Text != null)
-            {
-                filtro.madre = txtMadre.Text;
-            }
-            else
-            {
-                filtro.madre = "";
-            }
-            if (txtDomicilio.Text != null)
-            {
-                filtro.domicilio = txtDomicilio.Text;
-            }
-            else
-            {
-                filtro.domicilio = "";
-            }
-            if (txtConyuge.Text != null)
-            {
-                filtro.conyuge = txtConyuge.Text;
-            }
-            else
-            {
-                filtro.conyuge = "";
-            }
-            if (txtDocumento.Text != null)
-            {
-                filtro.documento = txtDocumento.Text;
-            }
-            else
-            {
-                filtro.documento = "";
-            }
-            if (txtFechaNaci.Text != null)
-            {
-                filtro.fechaDeNacimiento = txtFechaNaci.Text;
-            }
-            else
-            {
-                filtro.fechaDeNacimiento = "";
-            }
-
-            this.frmGrillaBusqueda.cargarGrilla(filtro);
-
-            this.frmGrillaBusqueda.Show();
-
         }
 
 
@@ -211,6 +148,12 @@ namespace The_Hight_School_Of_Avellaneda_System
                     {
                         this.Close();
                     }
+                    else
+                    {
+                        btnGuardar.Enabled = false;
+                        btnEditar.Enabled = true;
+                        btnEliminar.Enabled = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -235,6 +178,40 @@ namespace The_Hight_School_Of_Avellaneda_System
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo eliminar la ficha. Error: " + ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.main.Show();
+            this.Close();
+        }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                this.main.Show();
+                this.Close();
+            }
+        }
+
+        private void btnGuardar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                btnGuardar.PerformClick();
+            }
+        }
+
+        private void btnEditar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                btnEditar.PerformClick();
             }
         }
     }

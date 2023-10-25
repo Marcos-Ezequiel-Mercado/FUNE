@@ -25,6 +25,12 @@ namespace The_Hight_School_Of_Avellaneda_System
             lblCantResultados.Text = "0  fichas.";
             this.frmPrincipal = frmMain;
             btnBuscar.Enabled = false;
+
+
+            this.KeyPreview = true;
+            this.KeyDown += btnBuscar_KeyDown;
+            this.KeyDown += button1_KeyDown;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -99,16 +105,17 @@ namespace The_Hight_School_Of_Avellaneda_System
 
         private void dgvGrillaResultados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvGrillaResultados.Rows.Count)
-                {
-                    DataGridViewRow row = dgvGrillaResultados.Rows[e.RowIndex];
+            if (e.RowIndex >= 0 && e.RowIndex < dgvGrillaResultados.Rows.Count)
+            {
+                DataGridViewRow row = dgvGrillaResultados.Rows[e.RowIndex];
 
-                    Ficha resultado = this.crearResultadoDesdeUnRegistro(row);
+                Ficha resultado = this.crearResultadoDesdeUnRegistro(row);
 
-                    FrmVistaDetalle frmDetallesDeFicha = new FrmVistaDetalle(resultado,this);
-                    frmPrincipal.abrirFormularioHijo(frmDetallesDeFicha);
-                    
-                }
+                FrmVistaDetalle frmDetallesDeFicha = new FrmVistaDetalle(resultado ,frmPrincipal);
+                frmPrincipal.Hide();
+                frmDetallesDeFicha.ShowDialog();
+
+            }
         }
 
 
@@ -239,6 +246,29 @@ namespace The_Hight_School_Of_Avellaneda_System
             else
             {
                 btnBuscar.Enabled = false;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmPrincipal.volverAlHome();
+        }
+
+        private void btnBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                btnBuscar.PerformClick();
+            }
+        }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                this.Close();
             }
         }
     }

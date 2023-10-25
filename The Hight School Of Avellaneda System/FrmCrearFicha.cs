@@ -24,7 +24,11 @@ namespace The_Hight_School_Of_Avellaneda_System
             this.fichaService = new FichasService();
             this.frmMain = frmMain;
             usuario = this.capturarUsuarioLogueado();
-          //  lblUsuario.Text = Convert.ToString(usuario.Id) + " - " + usuario.nombre.ToString() + " " + usuario.apellido.ToString();
+            //  lblUsuario.Text = Convert.ToString(usuario.Id) + " - " + usuario.nombre.ToString() + " " + usuario.apellido.ToString();
+
+            this.KeyPreview = true;
+            this.KeyDown += btnGuardar_KeyDown;
+            this.KeyDown += button1_KeyDown;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -175,6 +179,28 @@ namespace The_Hight_School_Of_Avellaneda_System
             else
             {
                 btnGuardar.Enabled = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.frmMain.volverAlHome();
+        }
+
+        private void btnGuardar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                btnGuardar.PerformClick();
+            }
+        }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
             }
         }
     }
