@@ -17,18 +17,30 @@ namespace The_Hight_School_Of_Avellaneda_System
     public partial class FrmGrillaBusqueda : Form
     {
         private FichasService servicioDeBusqueda;
-
-        public FrmGrillaBusqueda()
+        private frmMain frmPrincipal;
+        public FrmGrillaBusqueda(frmMain frmMain)
         {
             InitializeComponent();
             servicioDeBusqueda = new FichasService();
+            lblCantResultados.Text = "0  fichas.";
+            this.frmPrincipal = frmMain;
+            btnBuscar.Enabled = false;
+
+
+            this.KeyPreview = true;
+            this.KeyDown += btnBuscar_KeyDown;
+            this.KeyDown += button1_KeyDown;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Filtro filtro = this.crearObjetoFiltro();
+            this.cargarGrilla(filtro);
+        }
 
+        public void cargarGrilla(Filtro filtro)
+        {
             DataTable tablaDeDatos = servicioDeBusqueda.buscarConFiltro(filtro);
 
             if (tablaDeDatos != null)
@@ -43,10 +55,9 @@ namespace The_Hight_School_Of_Avellaneda_System
                     }
 
                 }
-            
+                this.lblCantResultados.Text = dgvGrillaResultados.RowCount.ToString() + "  fichas.";
                 this.LimpiarTextBoxEnControles(this);
-            }         
-
+            }
         }
 
         private Filtro crearObjetoFiltro()
@@ -94,15 +105,17 @@ namespace The_Hight_School_Of_Avellaneda_System
 
         private void dgvGrillaResultados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-                if (e.RowIndex >= 0 && e.RowIndex < dgvGrillaResultados.Rows.Count)
-                {
-                    DataGridViewRow row = dgvGrillaResultados.Rows[e.RowIndex];
+            if (e.RowIndex >= 0 && e.RowIndex < dgvGrillaResultados.Rows.Count)
+            {
+                DataGridViewRow row = dgvGrillaResultados.Rows[e.RowIndex];
 
-                    Ficha resultado = this.crearResultadoDesdeUnRegistro(row);
+                Ficha resultado = this.crearResultadoDesdeUnRegistro(row);
 
-                    FrmVistaDetalle frmDetallesDeFicha = new FrmVistaDetalle(resultado);
-                    frmDetallesDeFicha.Show();
-                }
+                FrmVistaDetalle frmDetallesDeFicha = new FrmVistaDetalle(resultado ,frmPrincipal);
+                frmPrincipal.Hide();
+                frmDetallesDeFicha.ShowDialog();
+
+            }
         }
 
 
@@ -136,6 +149,127 @@ namespace The_Hight_School_Of_Avellaneda_System
             DataTable dt = new DataTable();
             PropertyInfo[] propertyInfos = typeof(T).GetProperties();
             return propertyInfos;
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+            
+                txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "" )
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtConyugue_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtDocumento_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtFallecimiento_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtMadre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtPadre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void txtDomicilio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
+
+               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            {
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                btnBuscar.Enabled = false;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frmPrincipal.volverAlHome();
+        }
+
+        private void btnBuscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                btnBuscar.PerformClick();
+            }
+        }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                this.Close();
+            }
         }
     }
 }

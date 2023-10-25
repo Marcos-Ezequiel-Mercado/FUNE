@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheHightSchoolOfAvellanedaSystem.Domain;
+using TheHightSchoolOfAvellanedaSystem.Services;
 
 namespace The_Hight_School_Of_Avellaneda_System
 {
@@ -15,23 +16,29 @@ namespace The_Hight_School_Of_Avellaneda_System
     {
 
         private FichasService fichaService;
+        private frmMain main;
 
-        public FrmVistaDetalle(Ficha ficha)
+        public FrmVistaDetalle(Ficha ficha, frmMain main)
         {
+            this.fichaService = new FichasService();
+            this.main = main;
+
             InitializeComponent();
 
-            fichaService = new FichasService();
+            this.KeyPreview = true;
+            this.KeyDown += btnGuardar_KeyDown;
+            this.KeyDown += btnEditar_KeyDown;
+            this.KeyDown += button1_KeyDown;
 
-            lblId.Text = ficha.Id.ToString();
-            lblTotal.Text = ficha.Total.ToString();
+            lblId.Text = ficha.Id.ToString();       
             txtNombre.Text = ficha.Nombre.ToString();
-            txtApellido.Text = ficha.Apellido.ToString();
+            txtResponsable.Text = ficha.Responsable.ToString();
             txtSexo.Text = ficha.Sexo.ToString();
             txtEstudios.Text = ficha.Estudios.ToString();
-            txtFechaNacimiento.Text = ficha.FechaDeNacimiento.ToString();
-            txtFechaFallecimiento.Text = ficha.FechaDeFallecimiento.ToString();
+            txtFechaNaci.Text = ficha.FechaDeNacimiento.ToString();
+            txtFechaFalle.Text = ficha.FechaDeFallecimiento.ToString();
             txtHoraFalle.Text = ficha.HoraDeFallecimiento.ToString();
-            txtUbicacion.Text = ficha.Partido.ToString();
+            txtUbicacion.Text = ficha.LugarDeFallecimiento.ToString();
             txtEdad.Text = ficha.Edad.ToString();
             txtECivil.Text = ficha.EstadoCivil.ToString();
             txtConyuge.Text = ficha.Conyugue.ToString();
@@ -51,34 +58,16 @@ namespace The_Hight_School_Of_Avellaneda_System
             txtFechaInh.Text = ficha.FechaInh.ToString();
             txtBeneficios.Text = ficha.Beneficios.ToString();
             txtCodigoPostal.Text = ficha.CodigoPostal.ToString();
-            txtdomicilio2.Text = ficha.Domicilio2.ToString();
-            txtDocumento2.Text = ficha.Documento.ToString();
+            txtdomicilio2.Text = ficha.DomicilioResponsable.ToString();
+            txtDocumento2.Text = ficha.DocumentoResponsable.ToString();
             txtGastos.Text = ficha.Gastos.ToString();
-            txtUsuario.Text = ficha.Usuario.ToString();
+            lblUsuario.Text = ficha.Usuario.ToString();
             txtImporte.Text = ficha.Importe.ToString();
-            txtObservacion.Text = ficha.Observacion.ToString();
-            lblServre.Text = ficha.Servre.ToString();
-            lblAtaud.Text = ficha.Ataud.ToString();
-            lblMortaja.Text = ficha.Mortaja.ToString();
-            lblFunebre.Text = ficha.Funebre.ToString();
-            lblVelatorio.Text = ficha.Velatorio.ToString();
-            lblMuertos.Text = ficha.Muertos.ToString();
-            lblPesoNaci.Text = ficha.PesoNacer.ToString();
-            lblPesoFalle.Text = ficha.PesoMorir.ToString();
-            lblAzafata.Text = ficha.Azafata.ToString();
-            lblLacayos.Text = ficha.Lacayos.ToString();
-            lblPortac.Text = ficha.Portac.ToString();
-            lblRemises.Text = ficha.Remises.ToString();
-            lblAnuncios.Text = ficha.Anuncios.ToString();
-            lblEmbarazos.Text = ficha.Embarazos.ToString();
-            lblSitConyugal.Text = ficha.SitConyugal.ToString();
-            lblTipoAtaud.Text = ficha.TipoAtaud.ToString();
-            lblEdadMadre.Text = ficha.EdadMadre.ToString();
-            lblVivos.Text = ficha.Vivos.ToString();
-            lblFechaBaja.Text = ficha.FechaBaja.ToString();
+            txtResponsable.Text = ficha.Responsable.ToString();
 
             this.activarTodosLosTextBox(this, false);
             btnGuardar.Enabled = false;
+          
         }
 
         private void activarTodosLosTextBox(Control control, bool enabled)
@@ -88,48 +77,26 @@ namespace The_Hight_School_Of_Avellaneda_System
                 if (childControl is TextBox)
                 {
                     TextBox textBox = (TextBox)childControl;
-                    textBox.Enabled = enabled; 
+                    textBox.Enabled = enabled;
                 }
                 else if (childControl.HasChildren)
                 {
-                    activarTodosLosTextBox(childControl,enabled);
+                    activarTodosLosTextBox(childControl, enabled);
                 }
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            this.activarTodosLosTextBox(this, true);
-            this.btnGuardar.Enabled = true;
-            this.btnEditar.Enabled = false;
-
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Ficha ficha = this.crearFichaParaEditar();
-            try {
-                this.fichaService.editarFichaService(ficha);
-            }
-        catch { }
-        }
 
         private Ficha crearFichaParaEditar()
         {
             Ficha ficha = new Ficha(
-            Convert.ToInt32(lblId.Text),
-            lblTotal.Text,
+            Convert.ToInt32(lblId.Text),          
             txtNombre.Text,
-            txtSexo.Text,
-            txtFechaFallecimiento.Text,
+           txtSexo.Text,
+            txtFechaFalle.Text,
             txtHoraFalle.Text,
             txtUbicacion.Text,
-            txtFechaNacimiento.Text,
+            txtFechaNaci.Text,
             txtEdad.Text,
             txtEstudios.Text,
             txtECivil.Text,
@@ -146,38 +113,106 @@ namespace The_Hight_School_Of_Avellaneda_System
             txtDiagnostico.Text,
             txtRegistroCivil.Text,
             txtCementerio.Text,
-            lblEdadMadre.Text,
-            lblEmbarazos.Text,
-            lblSitConyugal.Text,
-            lblVivos.Text,
-            lblMuertos.Text,
-            lblPesoNaci.Text,
-            lblPesoFalle.Text,
-            txtApellido.Text,
             txtdomicilio2.Text,
             txtCodigoPostal.Text,
-            txtDocumento2.Text,
-            txtObservacion.Text,
-            lblAtaud.Text,
-            lblMortaja.Text,
-            lblFunebre.Text,
-            lblVelatorio.Text,
-            lblAzafata.Text,
-            lblLacayos.Text,
-            lblPortac.Text,
-            lblRemises.Text,
-            lblServre.Text,
-            lblAnuncios.Text,
+            txtDocumento2.Text,  
             txtBeneficios.Text,
             txtGastos.Text,
-            txtImporte.Text,
             txtHoraInh.Text,
             txtFechaInh.Text,
-            txtUsuario.Text,
-            lblTipoAtaud.Text,
-            lblFechaBaja.Text);
-
+            lblUsuario.Text,
+            txtAtaud.Text,
+            txtResponsable.Text);
             return ficha;
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            this.activarTodosLosTextBox(this, true);
+            this.btnGuardar.Enabled = true;
+            this.btnEditar.Enabled = false;
+            this.btnEliminar.Enabled = false;
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            Ficha ficha = this.crearFichaParaEditar();
+
+            try
+            {
+                if (this.fichaService.editarFichaService(ficha))
+                {
+                    DialogResult result = MessageBox.Show("Se edito con exito! ¿Deseas seguir editando esta ficha?", "Confirmación", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.No)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        btnGuardar.Enabled = false;
+                        btnEditar.Enabled = true;
+                        btnEliminar.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo actualizar la ficha. Error: " + ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("¿Desea seguir con la eliminacion de la ficha?", "Confirmación", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.fichaService.eliminarFicha(lblId.Text);
+                    MessageBox.Show("Se elimino con exito!", "Confirmación", 0, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar la ficha. Error: " + ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.main.Show();
+            this.Close();
+        }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                this.main.Show();
+                this.Close();
+            }
+        }
+
+        private void btnGuardar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                btnGuardar.PerformClick();
+            }
+        }
+
+        private void btnEditar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Simula un clic en el botón cuando se presiona Enter
+                btnEditar.PerformClick();
+            }
         }
     }
 }

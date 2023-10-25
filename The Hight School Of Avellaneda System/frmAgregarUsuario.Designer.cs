@@ -52,11 +52,11 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.grpBxInfoUsuario = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbFamilia = new System.Windows.Forms.ComboBox();
             this.cmbIdioma = new System.Windows.Forms.ComboBox();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.cmbFamilia = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grpBxDatosPersonales.SuspendLayout();
             this.grpBxDireccion.SuspendLayout();
             this.grpBxContacto.SuspendLayout();
@@ -319,6 +319,23 @@
             this.grpBxInfoUsuario.TabStop = false;
             this.grpBxInfoUsuario.Text = "Información de Usuario";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Familia";
+            // 
+            // cmbFamilia
+            // 
+            this.cmbFamilia.FormattingEnabled = true;
+            this.cmbFamilia.Location = new System.Drawing.Point(88, 73);
+            this.cmbFamilia.Name = "cmbFamilia";
+            this.cmbFamilia.Size = new System.Drawing.Size(216, 21);
+            this.cmbFamilia.TabIndex = 16;
+            // 
             // cmbIdioma
             // 
             this.cmbIdioma.FormattingEnabled = true;
@@ -345,23 +362,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(216, 20);
             this.txtUsuario.TabIndex = 12;
-            // 
-            // cmbFamilia
-            // 
-            this.cmbFamilia.FormattingEnabled = true;
-            this.cmbFamilia.Location = new System.Drawing.Point(88, 73);
-            this.cmbFamilia.Name = "cmbFamilia";
-            this.cmbFamilia.Size = new System.Drawing.Size(216, 21);
-            this.cmbFamilia.TabIndex = 16;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Familia";
             // 
             // frmAgregarUsuario
             // 

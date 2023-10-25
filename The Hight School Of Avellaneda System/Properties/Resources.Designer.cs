@@ -19,7 +19,7 @@ namespace The_Hight_School_Of_Avellaneda_System.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,6 +57,66 @@ namespace The_Hight_School_Of_Avellaneda_System.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _30682_exit_log_out_logout_quit_session_icon {
+            get {
+                object obj = ResourceManager.GetObject("30682_exit_log out_logout_quit_session_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _743823_cancel_close_cross_delete_exit_icon {
+            get {
+                object obj = ResourceManager.GetObject("743823_cancel_close_cross_delete_exit_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9218459_quit_exit_close_door_icon {
+            get {
+                object obj = ResourceManager.GetObject("9218459_quit_exit_close_door_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2023_10_22_at_13_32_02 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2023-10-22 at 13.32.02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2023_10_22_at_13_32_22 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2023-10-22 at 13.32.22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2023_10_22_at_13_33_03 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2023-10-22 at 13.33.03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

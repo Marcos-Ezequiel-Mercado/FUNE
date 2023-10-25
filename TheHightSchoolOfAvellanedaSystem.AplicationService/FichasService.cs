@@ -5,15 +5,16 @@ using System.Linq;
 using System.Reflection;
 using TheHightSchoolOfAvellanedaSystem.Domain;
 using TheHightSchoolOfAvellanedaSystem.Repository;
+using TheHightSchoolOfAvellanedaSystem.Services;
 
 public class FichasService
 {
 	private FichasRepository repository;
-
+    private TheHightSchoolOfAvellanedaSystem.Domain.Usuario usuario;
 	public FichasService()
 	{
 		repository = new FichasRepository();
-
+        usuario = capturarUsuarioLogueado();
     }
 
 	public DataTable buscarConFiltro(Filtro filtro) {
@@ -28,9 +29,59 @@ public class FichasService
 		
 	}
 
-    public void editarFichaService(Ficha ficha)
+    public bool editarFichaService(Ficha ficha)
     {
-		repository.Update(ficha);
+        try
+        {
+            if (ficha != null)
+            {
+                return repository.Update(ficha);
+            }
+
+        }
+        catch (Exception ex)
+        {
+
+            throw new Exception(ex.Message);
+        }
+        return false;
+
+    }
+
+    public bool eliminarFicha(string fichaId)
+    {
+        bool exito = false;
+        try
+        {
+            if (fichaId != null)
+            {
+                return repository.Remove(usuario, fichaId);
+            }
+            return exito;
+        }
+        catch (Exception ex)
+        {
+
+            throw new Exception(ex.Message);
+        }
+    }
+
+    public bool guardarFicha(Ficha ficha, TheHightSchoolOfAvellanedaSystem.Domain.Usuario usuario)
+    {
+        bool exito = false;
+        try
+        {
+            if (ficha != null && usuario != null)
+            {
+                return repository.Add(ficha,usuario);
+            }
+            return exito;
+        }
+        catch (Exception ex)
+        {
+
+            throw new Exception(ex.Message);
+        }
     }
 
     private DataTable cargarDataTable(List<Ficha> resultados)
@@ -65,4 +116,17 @@ public class FichasService
 
 		return dt;
 	}
+
+    private TheHightSchoolOfAvellanedaSystem.Domain.Usuario capturarUsuarioLogueado()
+    {
+        TheHightSchoolOfAvellanedaSystem.Domain.Usuario usuario = new TheHightSchoolOfAvellanedaSystem.Domain.Usuario();
+        usuario.Id = ManejadorDeSesion.GetInstance.Session.Id;
+        usuario.nombre = ManejadorDeSesion.GetInstance.Session.nombre;
+        usuario.apellido = ManejadorDeSesion.GetInstance.Session.apellido;
+        usuario.dni = ManejadorDeSesion.GetInstance.Session.dni;
+        usuario.username = ManejadorDeSesion.GetInstance.Session.username;
+
+        return usuario;
+
+    }
 }
