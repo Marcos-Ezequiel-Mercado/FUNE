@@ -17,6 +17,7 @@ namespace The_Hight_School_Of_Avellaneda_System
 
         private FichasService fichaService;
         private frmMain main;
+        private Form currentFormChildren;
 
         public FrmVistaDetalle(Ficha ficha, frmMain main)
         {
@@ -213,6 +214,28 @@ namespace The_Hight_School_Of_Avellaneda_System
                 // Simula un clic en el botón cuando se presiona Enter
                 btnEditar.PerformClick();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            abrirFormularioHijo(new frmHistorico(lblId.Text));
+        }
+
+        // nuevo Matias.
+        public void abrirFormularioHijo(Form children)
+        {
+            if (currentFormChildren != null)
+            {
+                currentFormChildren.Close();
+            }
+            currentFormChildren = children;
+            children.TopLevel = false;
+            children.FormBorderStyle = FormBorderStyle.None;
+            children.Dock = DockStyle.Fill;
+            this.Controls.Add(children);
+            //panelEscritrio.Tag = children;
+            children.BringToFront();
+            children.Show();
         }
     }
 }

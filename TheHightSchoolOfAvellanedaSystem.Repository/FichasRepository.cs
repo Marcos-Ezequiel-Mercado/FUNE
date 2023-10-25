@@ -16,6 +16,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
         private String procesoBusquedaFichas;
         private String procesoEditarFichas;
         private String procesoEliminarFichas;
+        private String prosesoHistorico;
         private MasterConexion masterConexion;
         public FichasRepository()
         {
@@ -23,6 +24,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
             procesoBusquedaFichas = "SP_GET_FICHAS";
             procesoEditarFichas = "SP_INSERT_UPDATE_FICHAS";
             procesoEliminarFichas = "SP_ELIMINAR_FICHAS";
+            prosesoHistorico = "SP_GET_FICHAS_HISTORICO";
         }
         public bool Add(Ficha ficha, Usuario usuarioLogueado)
         {
@@ -65,7 +67,20 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
             }
         }
 
-      
+        // vista historico (en proceso).
+        public List<Ficha> Historico(string parametro)
+        {
+            try
+            {
+                var parametros = this.crearParametroHistorico(parametro);
+                return (List<Ficha>)masterConexion.GetEntities<Ficha>(prosesoHistorico, parametros);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception (ex.Message);
+            }
+        }
+        //==========================
 
         public bool Update(Ficha ficha)
         {
@@ -85,7 +100,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
             }
         }
 
-
+        
         public List<Ficha> listarFichasSegunFiltro(Filtro filtro)
         {
             try
@@ -122,6 +137,15 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
             {
                 @USUARIO = usuario.nombre + " " + usuario.apellido,
                 @ID_FICHA = ficha,
+            };
+        }
+
+        /*id registro para historico.*/
+        private Object crearParametroHistorico(string idregistro)
+        {
+            return new
+            {
+                @id_ficha = idregistro,
             };
         }
 

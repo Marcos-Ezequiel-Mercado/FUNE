@@ -129,6 +129,12 @@
     <Compile Include="FrmGrillaBusqueda.Designer.cs">
       <DependentUpon>FrmGrillaBusqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorico.Designer.cs">
+      <DependentUpon>frmHistorico.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGrillaBusqueda.resx">
       <DependentUpon>FrmGrillaBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorico.resx">
+      <DependentUpon>frmHistorico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
