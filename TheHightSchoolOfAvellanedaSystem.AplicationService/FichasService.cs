@@ -33,6 +33,14 @@ public class FichasService
 		repository.Update(ficha);
     }
 
+	//=================
+	// nuevo Matias.
+	public void Baja(Ficha ficha, int idUsuario)
+	{
+		repository.Baja(ficha, idUsuario);
+	}
+	//=================
+
     private DataTable cargarDataTable(List<Ficha> resultados)
 	{
         DataTable data = this.createDataTableDesdeUnaEntidad<Ficha>();

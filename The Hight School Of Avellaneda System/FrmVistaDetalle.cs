@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheHightSchoolOfAvellanedaSystem.Domain;
+using TheHightSchoolOfAvellanedaSystem.Services;
 
 namespace The_Hight_School_Of_Avellaneda_System
 {
@@ -15,6 +16,8 @@ namespace The_Hight_School_Of_Avellaneda_System
     {
 
         private FichasService fichaService;
+        // nuevo Matias.
+        private String fecha_baja;
 
         public FrmVistaDetalle(Ficha ficha)
         {
@@ -72,7 +75,7 @@ namespace The_Hight_School_Of_Avellaneda_System
             lblAnuncios.Text = ficha.Anuncios.ToString();
             lblEmbarazos.Text = ficha.Embarazos.ToString();
             lblSitConyugal.Text = ficha.SitConyugal.ToString();
-            lblTipoAtaud.Text = ficha.TipoAtaud.ToString();
+            txtTipoAtaud.Text = ficha.TipoAtaud.ToString();
             lblEdadMadre.Text = ficha.EdadMadre.ToString();
             lblVivos.Text = ficha.Vivos.ToString();
             lblFechaBaja.Text = ficha.FechaBaja.ToString();
@@ -105,10 +108,21 @@ namespace The_Hight_School_Of_Avellaneda_System
 
         }
 
+        // baja logica de la tabla FUNE.
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-        }
+            Ficha ficha = new Ficha();
+            // agrego en ficha el id.
+            ficha.Id = Convert.ToInt32(this.lblId.Text);
+            
+            int usuarioId = ManejadorDeSesion.GetInstance.Session.Id;
+            this.fichaService.Baja(ficha,usuarioId);
+            // doy mensaje cuando se completa la operacion.
+            MessageBox.Show("Se realizo la baja", "Baja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // cierro formulario.
+            this.Close();   
+           
+        }      
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -123,7 +137,7 @@ namespace The_Hight_School_Of_Avellaneda_System
         {
             Ficha ficha = new Ficha(
             Convert.ToInt32(lblId.Text),
-            lblTotal.Text,
+            
             txtNombre.Text,
             txtSexo.Text,
             txtFechaFallecimiento.Text,
@@ -146,36 +160,14 @@ namespace The_Hight_School_Of_Avellaneda_System
             txtDiagnostico.Text,
             txtRegistroCivil.Text,
             txtCementerio.Text,
-            lblEdadMadre.Text,
-            lblEmbarazos.Text,
-            lblSitConyugal.Text,
-            lblVivos.Text,
-            lblMuertos.Text,
-            lblPesoNaci.Text,
-            lblPesoFalle.Text,
-            txtApellido.Text,
             txtdomicilio2.Text,
             txtCodigoPostal.Text,
-            txtDocumento2.Text,
-            txtObservacion.Text,
-            lblAtaud.Text,
-            lblMortaja.Text,
-            lblFunebre.Text,
-            lblVelatorio.Text,
-            lblAzafata.Text,
-            lblLacayos.Text,
-            lblPortac.Text,
-            lblRemises.Text,
-            lblServre.Text,
-            lblAnuncios.Text,
+            txtDocumento2.Text,  
             txtBeneficios.Text,
             txtGastos.Text,
-            txtImporte.Text,
             txtHoraInh.Text,
-            txtFechaInh.Text,
             txtUsuario.Text,
-            lblTipoAtaud.Text,
-            lblFechaBaja.Text);
+            txtTipoAtaud.Text);
 
             return ficha;
         }

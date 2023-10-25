@@ -130,7 +130,6 @@
             this.lblFechaBaja = new System.Windows.Forms.Label();
             this.lblVivos = new System.Windows.Forms.Label();
             this.lblEdadMadre = new System.Windows.Forms.Label();
-            this.lblTipoAtaud = new System.Windows.Forms.Label();
             this.lblSitConyugal = new System.Windows.Forms.Label();
             this.lblEmbarazos = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -139,6 +138,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtHoraFalle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtTipoAtaud = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -342,7 +342,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(773, 599);
+            this.label24.Location = new System.Drawing.Point(772, 573);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(73, 13);
             this.label24.TabIndex = 23;
@@ -369,7 +369,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(773, 627);
+            this.label27.Location = new System.Drawing.Point(772, 601);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(42, 13);
             this.label27.TabIndex = 26;
@@ -441,7 +441,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(400, 427);
+            this.label35.Location = new System.Drawing.Point(400, 463);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(76, 13);
             this.label35.TabIndex = 34;
@@ -558,7 +558,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(774, 657);
+            this.label48.Location = new System.Drawing.Point(773, 631);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(69, 13);
             this.label48.TabIndex = 47;
@@ -567,7 +567,7 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(771, 567);
+            this.label49.Location = new System.Drawing.Point(400, 434);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(67, 13);
             this.label49.TabIndex = 48;
@@ -614,8 +614,9 @@
             this.lblId.AutoSize = true;
             this.lblId.Location = new System.Drawing.Point(84, 28);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(0, 13);
+            this.lblId.Size = new System.Drawing.Size(15, 13);
             this.lblId.TabIndex = 53;
+            this.lblId.Text = "id";
             // 
             // label54
             // 
@@ -845,10 +846,10 @@
             // 
             // txtObservacion
             // 
-            this.txtObservacion.Location = new System.Drawing.Point(480, 427);
+            this.txtObservacion.Location = new System.Drawing.Point(480, 463);
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(235, 360);
+            this.txtObservacion.Size = new System.Drawing.Size(235, 324);
             this.txtObservacion.TabIndex = 86;
             // 
             // lblServre
@@ -971,7 +972,7 @@
             // lblFechaBaja
             // 
             this.lblFechaBaja.AutoSize = true;
-            this.lblFechaBaja.Location = new System.Drawing.Point(849, 657);
+            this.lblFechaBaja.Location = new System.Drawing.Point(848, 631);
             this.lblFechaBaja.Name = "lblFechaBaja";
             this.lblFechaBaja.Size = new System.Drawing.Size(41, 13);
             this.lblFechaBaja.TabIndex = 100;
@@ -980,7 +981,7 @@
             // lblVivos
             // 
             this.lblVivos.AutoSize = true;
-            this.lblVivos.Location = new System.Drawing.Point(821, 627);
+            this.lblVivos.Location = new System.Drawing.Point(820, 601);
             this.lblVivos.Name = "lblVivos";
             this.lblVivos.Size = new System.Drawing.Size(41, 13);
             this.lblVivos.TabIndex = 101;
@@ -989,20 +990,11 @@
             // lblEdadMadre
             // 
             this.lblEdadMadre.AutoSize = true;
-            this.lblEdadMadre.Location = new System.Drawing.Point(853, 599);
+            this.lblEdadMadre.Location = new System.Drawing.Point(852, 573);
             this.lblEdadMadre.Name = "lblEdadMadre";
             this.lblEdadMadre.Size = new System.Drawing.Size(41, 13);
             this.lblEdadMadre.TabIndex = 102;
             this.lblEdadMadre.Text = "label69";
-            // 
-            // lblTipoAtaud
-            // 
-            this.lblTipoAtaud.AutoSize = true;
-            this.lblTipoAtaud.Location = new System.Drawing.Point(853, 563);
-            this.lblTipoAtaud.Name = "lblTipoAtaud";
-            this.lblTipoAtaud.Size = new System.Drawing.Size(41, 13);
-            this.lblTipoAtaud.TabIndex = 103;
-            this.lblTipoAtaud.Text = "label70";
             // 
             // lblSitConyugal
             // 
@@ -1033,7 +1025,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(754, 760);
+            this.btnEditar.Location = new System.Drawing.Point(754, 683);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(129, 23);
             this.btnEditar.TabIndex = 107;
@@ -1043,7 +1035,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(929, 760);
+            this.btnEliminar.Location = new System.Drawing.Point(929, 683);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(133, 23);
             this.btnEliminar.TabIndex = 108;
@@ -1053,7 +1045,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(754, 721);
+            this.btnGuardar.Location = new System.Drawing.Point(754, 654);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(308, 23);
             this.btnGuardar.TabIndex = 109;
@@ -1077,11 +1069,19 @@
             this.label5.TabIndex = 110;
             this.label5.Text = "Hora de fallecimiento =";
             // 
+            // txtTipoAtaud
+            // 
+            this.txtTipoAtaud.Location = new System.Drawing.Point(482, 427);
+            this.txtTipoAtaud.Name = "txtTipoAtaud";
+            this.txtTipoAtaud.Size = new System.Drawing.Size(235, 20);
+            this.txtTipoAtaud.TabIndex = 112;
+            // 
             // FrmVistaDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 799);
+            this.ClientSize = new System.Drawing.Size(1085, 749);
+            this.Controls.Add(this.txtTipoAtaud);
             this.Controls.Add(this.txtHoraFalle);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGuardar);
@@ -1090,7 +1090,6 @@
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblEmbarazos);
             this.Controls.Add(this.lblSitConyugal);
-            this.Controls.Add(this.lblTipoAtaud);
             this.Controls.Add(this.lblEdadMadre);
             this.Controls.Add(this.lblVivos);
             this.Controls.Add(this.lblFechaBaja);
@@ -1305,7 +1304,6 @@
         private System.Windows.Forms.Label lblFechaBaja;
         private System.Windows.Forms.Label lblVivos;
         private System.Windows.Forms.Label lblEdadMadre;
-        private System.Windows.Forms.Label lblTipoAtaud;
         private System.Windows.Forms.Label lblSitConyugal;
         private System.Windows.Forms.Label lblEmbarazos;
         private System.Windows.Forms.Label lblTotal;
@@ -1314,5 +1312,6 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtHoraFalle;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtTipoAtaud;
     }
 }

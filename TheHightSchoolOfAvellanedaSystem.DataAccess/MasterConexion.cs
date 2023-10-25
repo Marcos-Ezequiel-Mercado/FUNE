@@ -65,7 +65,7 @@ namespace TheHightSchoolOfAvellanedaSystem.DataAccess
             }
         }
 
-
+        // parece que aqui hace la coneccion con el ORM.
         public IEnumerable<T> GetEntities<T>(String storedProcedure, Object parameters)
         {
             using (var connection = GetConnectionSeguridad())

@@ -3,7 +3,7 @@ using TheHightSchoolOfAvellanedaSystem.Domain;
 
 namespace TheHightSchoolOfAvellanedaSystem.Repository
 {
-    public interface IFichasRepository
+    public interface IFichasRepository 
     {
         List<Ficha> listarFichasSegunFiltro(Filtro filtro);
     }
