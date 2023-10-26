@@ -187,7 +187,15 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
                 @CODPOSTAL = ficha.CodigoPostal,
                 @DOCUMENTO2_RESP = ficha.DocumentoResponsable,
                 @ATAUD = ficha.Ataud,
-                @AFIN = ficha.Afin
+                @AFIN = ficha.Afin,
+                @SITCONYUGA = ficha.SitConyugal,
+                @EMBARAZOS = ficha.Embarazos,
+                @EDADMADRE = ficha.EdadMadre,
+                @VIVOS = ficha.Vivos,
+                @MUERTOS = ficha.Muertos,
+                @PESONACER = ficha.PesoNacer,
+                @PESOMORIR = ficha.PesoMorir,
+                @TEL_RESPONSABLE = ficha.TelResponsable
             };
         }    
     }

@@ -123,7 +123,8 @@ namespace The_Hight_School_Of_Avellaneda_System
             txtFechaInh.Text,
             lblUsuario.Text,
             txtAtaud.Text,
-            txtResponsable.Text);
+            txtResponsable.Text,
+            txtTelResponsable.Text);
             return ficha;
         }
 

@@ -67,7 +67,7 @@ namespace The_Hight_School_Of_Avellaneda_System
             ficha.Nombre = txtNombre.Text;
             ficha.Documento = txtDocumento.Text;
             ficha.FechaDeNacimiento = dtpNacimiento.Value.ToShortDateString();
-            ficha.Edad = cmbEdad.Text;
+            ficha.Edad = txtEdad.Text;
             ficha.Sexo = cmbSexo.Text;
             ficha.Domicilio = txtDomicilio.Text;
             ficha.Partido = txtLocalidad.Text;
@@ -97,6 +97,13 @@ namespace The_Hight_School_Of_Avellaneda_System
             ficha.Beneficios = txtBeneficios.Text;
             ficha.Gastos = txtGastos.Text;
             ficha.Afin = txtAfin.Text;
+            ficha.SitConyugal = txtSitConyugal.Text;
+            ficha.Embarazos = txtEmbarazo.Text;
+            ficha.EdadMadre = txtEdadMadre.Text;
+            ficha.Vivos = txtVivos.Text;
+            ficha.Muertos = txtMuertos.Text;
+            ficha.PesoNacer = txtPesoNacer.Text;
+            ficha.PesoMorir = txtPesoMorir.Text;
 
             return ficha;
         }
@@ -202,6 +209,73 @@ namespace The_Hight_School_Of_Avellaneda_System
             {
                 this.Close();
             }
+        }
+
+        private void txtEdad_TextChanged(object sender, EventArgs e)
+        {
+            if (txtEdad.Text == "0")
+            {
+                lblSitConyugal.Visible = true;
+                txtSitConyugal.Visible = true;
+                lblEmbarazo.Visible = true;
+                txtEmbarazo.Visible = true;
+                lblVivos.Visible = true;
+                txtVivos.Visible = true;
+                lblMuertos.Visible = true;
+                txtMuertos.Visible = true;
+                lblPesoNacer.Visible = true;
+                txtPesoNacer.Visible = true;
+                lblPesoMorir.Visible = true;
+                txtPesoMorir.Visible = true;
+                lblEdadMadre.Visible = true;
+                txtEdadMadre.Visible = true;
+            }
+            else
+            {
+                lblSitConyugal.Visible = false;
+                txtSitConyugal.Visible = false;
+                lblEmbarazo.Visible = false;
+                txtEmbarazo.Visible = false;
+                lblVivos.Visible = false;
+                txtVivos.Visible = false;
+                lblMuertos.Visible = false;
+                txtMuertos.Visible = false;
+                lblPesoNacer.Visible = false;
+                txtPesoNacer.Visible = false;
+                lblPesoMorir.Visible = false;
+                txtPesoMorir.Visible = false;
+                lblEdadMadre.Visible = false;
+                txtEdadMadre.Visible = false;
+            }
+        }
+
+        private int CalcularEdad(DateTime fechaNacimiento)
+        {
+            // Obtiene la fecha actual
+            DateTime fechaActual = DateTime.Today;
+
+            // Calcula la edad restando el año de nacimiento al año actual
+            int edad = fechaActual.Year - fechaNacimiento.Year;
+
+            // Comprueba si el cumpleaños ya pasó este año
+            if (fechaNacimiento > fechaActual.AddYears(-edad))
+            {
+                edad--;
+            }
+
+            return edad;
+        }
+
+        private void dtpNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            // Obtiene la fecha de nacimiento desde el DateTimePicker
+            DateTime fechaNacimiento = dtpNacimiento.Value;
+
+            // Calcula la edad
+            int edad = CalcularEdad(fechaNacimiento);
+
+            // Muestra la edad en el TextBox
+            txtEdad.Text = edad.ToString();
         }
     }
 }

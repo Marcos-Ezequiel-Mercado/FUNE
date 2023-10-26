@@ -160,7 +160,7 @@
             this.barraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraSuperior.Location = new System.Drawing.Point(234, 0);
             this.barraSuperior.Name = "barraSuperior";
-            this.barraSuperior.Size = new System.Drawing.Size(1136, 73);
+            this.barraSuperior.Size = new System.Drawing.Size(1243, 73);
             this.barraSuperior.TabIndex = 5;
             this.barraSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraSuperior_MouseDown);
             // 
@@ -172,7 +172,7 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ArrowsToCircle;
             this.iconPictureBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(1081, 23);
+            this.iconPictureBox1.Location = new System.Drawing.Point(1188, 23);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox1.TabIndex = 4;
@@ -208,7 +208,7 @@
             this.shadowsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.shadowsPanel.Location = new System.Drawing.Point(234, 73);
             this.shadowsPanel.Name = "shadowsPanel";
-            this.shadowsPanel.Size = new System.Drawing.Size(1136, 11);
+            this.shadowsPanel.Size = new System.Drawing.Size(1243, 11);
             this.shadowsPanel.TabIndex = 7;
             // 
             // panelEscritrio
@@ -218,7 +218,7 @@
             this.panelEscritrio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritrio.Location = new System.Drawing.Point(234, 84);
             this.panelEscritrio.Name = "panelEscritrio";
-            this.panelEscritrio.Size = new System.Drawing.Size(1136, 665);
+            this.panelEscritrio.Size = new System.Drawing.Size(1243, 665);
             this.panelEscritrio.TabIndex = 8;
             // 
             // panel1
@@ -234,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1477, 749);
             this.Controls.Add(this.panelEscritrio);
             this.Controls.Add(this.shadowsPanel);
             this.Controls.Add(this.barraSuperior);

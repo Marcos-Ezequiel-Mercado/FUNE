@@ -62,6 +62,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
         private string usuario;
         private string afin;
         private string fechaEliminacion;
+        private string telResponsable;
 
         public Ficha()
         {
@@ -73,7 +74,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
             string diagnostico, string registroCivil, string cementerio, string edadMadre, string embarazos, string sitConyugal, string vivos, string muertos,
             string pesoNacer, string pesoMorir, string responsable, string domicilio2, string codigoPostal, string documento2, string observacion, string ataud, 
             string mortaja, string funebre, string velatorio, string azafata, string lacayos, string portac, string remises, string servre, string anuncios,
-            string beneficios, string gastos, string importe, string horaInh, string fechaInh, string usuario, string afin, string fechaBaja)
+            string beneficios, string gastos, string importe, string horaInh, string fechaInh, string usuario, string afin, string fechaBaja, string telResponsable)
         {
             Id = id;
             Total = total;
@@ -129,13 +130,14 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
             Usuario = usuario;
             Afin = afin;
             FechaEliminacion = fechaBaja;
+            TelResponsable = telResponsable;
         }
 
         public Ficha(int id, string nombre, string sexo, string fechaDeFallecimiento, string horaDeFallecimiento,
            string lugarDeFallecimiento, string fechaDeNacimiento, string edad, string estudios, string estadoCivil, string conyugue, string padre,
            string madre, string domicilio, string partido, string nacionalidad, string provincia, string documento, string profesion, string medico,
            string diagnostico, string registroCivil, string cementerio, string domicilioResponsable, string codigoPostal, string documentoResponsable,
-           string beneficios, string gastos,  string horaInh,string fechaInh, string usuario, string afin,string responsable)
+           string beneficios, string gastos,  string horaInh,string fechaInh, string usuario, string afin,string responsable, string telResponsable)
         {
             Id = id;
             Nombre = nombre;
@@ -170,6 +172,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
             Usuario = usuario;
             Afin = afin;
             Responsable = responsable;
+            TelResponsable = telResponsable;
         }
 
         public int Id { get ; set; }
@@ -226,6 +229,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
         public string Usuario { get => usuario; set => usuario = value; }
         public string Afin { get => afin; set => afin = value; }
         public string FechaEliminacion { get => fechaEliminacion; set => fechaEliminacion = value; }
+        public string TelResponsable { get => telResponsable; set => telResponsable = value; }
     }
 }
 
