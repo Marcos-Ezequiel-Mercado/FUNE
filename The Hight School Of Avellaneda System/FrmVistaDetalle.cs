@@ -68,7 +68,13 @@ namespace The_Hight_School_Of_Avellaneda_System
 
             this.activarTodosLosTextBox(this, false);
             btnGuardar.Enabled = false;
-          
+            
+
+
+
+            btnEliminar.Enabled = ManejadorDeSesion.GetInstance.IsAdmin();
+            
+
         }
 
         private void activarTodosLosTextBox(Control control, bool enabled)

@@ -98,12 +98,16 @@ namespace TheHightSchoolOfAvellanedaSystem.AplicationService
 
                        //VER SI ES NECESARIO AGREGAR LA MODIFICACIÓN DEL USUARIO A LA BITACORA                        
                     }
-                        usuario = _repo.addPatentes(usuario);
-
-                        //luego juego con el manejador de session
-                        ManejadorDeSesion.GetInstance.Login(usuario);
+                        
                     }
                 }
+
+
+                usuario = _repo.addPatentes(usuario);
+
+                //luego juego con el manejador de session
+                ManejadorDeSesion.GetInstance.Login(usuario);
+
             }
             catch (Exception ex)
             {
