@@ -48,28 +48,7 @@ namespace TheHightSchoolOfAvellanedaSystem.AplicationService
                 if (usuario.username == null)
                 {
                     usuario = _repo.ObtenerUsuarioPorUsuario(usuEncriptado);
-                    if (usuario.username == null) { throw new Exception("Usuario y contraseña incorrectos"); }
-                    else 
-                    {
-                        if (usuario.cai >= 3) { throw new Exception("Usuario bloqueado, por favor comuiquese con el administrador del sistema."); }
-                        //VER SI QUIEREN DARLE UN TRATAMIENTO A ESTOS USUARIOS QUE NO FUERON ADMITIDOS (REGISTRO EN LA BITACORA)
-                        else if (usuario.estado == 3) { throw new Exception("Usuario en estado de baja, por favor comuiquese con el administrador del sistema."); }
-                        else
-                        {   //aca estimo que el nombre fue bien introduicido, pero no la contraseña aumento el CAI + 1 
-                            usuario.cai++;
-                            usuario.username = usuEncriptado;
-                            Services.Usuario.SetDVH(usuario);
-                            _repo.Update(usuario);
-                            string tablaUsers = "Usuario";
-                            int DVVUsers = _dvRepo.ObtenerSumDVH("Usu_DVH", tablaUsers);
-                            Digitoverificador dv = new Digitoverificador();
-                            dv.dvv = DVVUsers;
-                            dv.tabla = tablaUsers;
-                            _dvRepo.Update(dv);
-                            throw new Exception("Contraseña incorrecta");
-                            //VER SI ESTA ACCION DEBE REGISTRARSE EN LA BITACORA
-                        }
-                    }
+                    if (usuario.username == null) { throw new Exception("Usuario y contraseña incorrectos"); }                    
                 }
                 else
                 {

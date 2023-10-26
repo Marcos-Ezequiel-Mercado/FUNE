@@ -57,6 +57,8 @@
             this.cmbIdioma = new System.Windows.Forms.ComboBox();
             this.lblIdioma = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtcontrasenia = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpBxDatosPersonales.SuspendLayout();
             this.grpBxDireccion.SuspendLayout();
             this.grpBxContacto.SuspendLayout();
@@ -67,7 +69,7 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(8, 405);
+            this.btnGuardar.Location = new System.Drawing.Point(7, 450);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(312, 37);
@@ -363,11 +365,32 @@
             this.txtUsuario.Size = new System.Drawing.Size(216, 20);
             this.txtUsuario.TabIndex = 12;
             // 
+            // txtcontrasenia
+            // 
+            this.txtcontrasenia.Location = new System.Drawing.Point(96, 405);
+            this.txtcontrasenia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtcontrasenia.Name = "txtcontrasenia";
+            this.txtcontrasenia.Size = new System.Drawing.Size(216, 20);
+            this.txtcontrasenia.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 408);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Password:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // frmAgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 453);
+            this.ClientSize = new System.Drawing.Size(330, 516);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtcontrasenia);
             this.Controls.Add(this.grpBxInfoUsuario);
             this.Controls.Add(this.grpBxContacto);
             this.Controls.Add(this.grpBxDireccion);
@@ -387,6 +410,7 @@
             this.grpBxInfoUsuario.ResumeLayout(false);
             this.grpBxInfoUsuario.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -421,5 +445,7 @@
         private System.Windows.Forms.Label lblIdioma;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbFamilia;
+        private System.Windows.Forms.TextBox txtcontrasenia;
+        private System.Windows.Forms.Label label2;
     }
 }

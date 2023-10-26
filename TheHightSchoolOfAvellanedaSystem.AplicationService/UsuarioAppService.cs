@@ -169,7 +169,7 @@ namespace TheHightSchoolOfAvellanedaSystem.AplicationService
         }
 
         public void usuarioInsert(string dni, string nombrePersona, string apellidoPersona, string calle, string numero, string codigoPostal, string localidad, 
-                                  string email, string telefono, string username, string idioma, string familia, int usuarioEnSesion, long usuarioEnSesionDNI)
+                                  string email, string telefono, string username, string idioma, string familia, int usuarioEnSesion, long usuarioEnSesionDNI,string contrasenia)
         {
             if (String.IsNullOrEmpty(Convert.ToString(dni)) || String.IsNullOrEmpty(nombrePersona) || String.IsNullOrEmpty(apellidoPersona) || 
                 String.IsNullOrEmpty(calle) || String.IsNullOrEmpty(Convert.ToString(numero)) || String.IsNullOrEmpty(Convert.ToString(codigoPostal)) ||
@@ -181,15 +181,16 @@ namespace TheHightSchoolOfAvellanedaSystem.AplicationService
             usuarioEmail.dni = Convert.ToInt64(dni);
             Domain.Usuario usuario = new Domain.Usuario(usuarioEmail);
             Encriptación usernameEncriptado = new Encriptación();
-            string usuarioEncriptado = usernameEncriptado.Encriptar(username, "Michael");  
+            string usuarioEncriptado = usernameEncriptado.Encriptar(username, "Michael");
+            string contraseniaEncriptado = usernameEncriptado.Encriptar(contrasenia, "Michael");
             usuario = _repo.ObtenerUsuarioPorUsuario(usuarioEncriptado);
             if (usuario.username != null) { throw new Exception("Imposible usar el nombre de usuario ingresado. Por favor, ingrese uno distinto."); }
             usuario.dni = Convert.ToInt64(dni);
             usuario.nombre = nombrePersona;
             usuario.apellido = apellidoPersona;
             usuario.username = usuarioEncriptado;
-            string passPura = Services.Usuario.setPass();
-            usuario.password = passPura;
+            usuario.password = contraseniaEncriptado;
+            string passPura = Services.Usuario.setPass();            
             usuario.idIdioma = Convert.ToInt32(idioma);
             usuario.estado = (int)EntityState.Creado;
             //////////////////////////////////////
@@ -215,20 +216,24 @@ namespace TheHightSchoolOfAvellanedaSystem.AplicationService
             usuariofamilia.idFamilia = Convert.ToInt32(familia);
             _usufamRepo.Add(usuariofamilia);
             ////Inserto las bitacoras y movimientos
-            Domain.Bitacora bitacora = new Domain.Bitacora();
-            bitacora.idUsuario = usuarioEnSesion;
-            bitacora.dni = usuarioEnSesionDNI;
-            bitacora.idMovimiento = (int)Enum_Movimientos.Alta;
-            bitacora.descripcion = Enum_Movimientos.Alta.ToString() + " usuario " + idUserCreado + ", nombre: " + nombrePersona + " " + apellidoPersona + ", dni: " + dni;
-            //bitacora.Bit_Criticidad = "Leve";
-            string tabla = "Bitacora";
-            Services.Bitacora.SetDVH(bitacora);
-            _bitaRepo.Add(bitacora);
-            int DVV = _dvRepo.ObtenerSumDVH("dvh", tabla);
-            Digitoverificador dv = new Digitoverificador();
-            dv.dvv = DVV;
-            dv.tabla = tabla;
-            _dvRepo.Update(dv);
+            /*
+             Domain.Bitacora bitacora = new Domain.Bitacora();
+             bitacora.idUsuario = usuarioEnSesion;
+             bitacora.dni = usuarioEnSesionDNI;
+             bitacora.idMovimiento = (int)Enum_Movimientos.Alta;
+             bitacora.descripcion = Enum_Movimientos.Alta.ToString() + " usuario " + idUserCreado + ", nombre: " + nombrePersona + " " + apellidoPersona + ", dni: " + dni;
+             //bitacora.Bit_Criticidad = "Leve";
+             string tabla = "Bitacora";
+             Services.Bitacora.SetDVH(bitacora);
+             _bitaRepo.Add(bitacora);
+
+             int DVV = _dvRepo.ObtenerSumDVH("dvh", tabla);
+             Digitoverificador dv = new Digitoverificador();
+             dv.dvv = DVV;
+             dv.tabla = tabla;
+             _dvRepo.Update(dv);
+            */
+
             //Domain.Movimientos movimiento = new Domain.Movimientos();
             //movimiento.Bit_Id_Mov = bitacora.Id;
             //movimiento.Usu_Id = bitacora.Usu_Id;
@@ -242,11 +247,13 @@ namespace TheHightSchoolOfAvellanedaSystem.AplicationService
             //dv.Tabla = tablaMov;
             //_dvRepo.Update(dv);
             //actualizo los dvv usuarios
+            /*
             string tablaUsers = "Usuario";
             int DVVUsers = _dvRepo.ObtenerSumDVH("dvh", tablaUsers);
             dv.dvv = DVVUsers;
             dv.tabla = tablaUsers;
             _dvRepo.Update(dv);
+           
             //Cargo el movimiento en los controles de cambios
             ControlDeCambiosAppService control = new ControlDeCambiosAppService();
             control.UsuarioControlDeCambiosAdd(usuario, usuarioEnSesion, usuarioEnSesionDNI);
@@ -254,6 +261,7 @@ namespace TheHightSchoolOfAvellanedaSystem.AplicationService
             string nombreTxt = usuario.nombre + usuario.apellido;
             Serializacion usuarioSerializado = new Serializacion(username, passPura, nombreTxt);
             usuarioSerializado.GenerarArchivo();
+             */
         }
         public int usuarioSelectLaguage(int idUsuario)
         {
