@@ -111,7 +111,7 @@ namespace The_Hight_School_Of_Avellaneda_System
                     {
                         _usuario.usuarioInsert(txtDNI.Text, txtNombre.Text, txtApellido.Text, txtCalle.Text, txtNumero.Text, txtCodigoPostal.Text, 
                                                Convert.ToString(cmbLocalidad.SelectedValue), txtEmail.Text, txtTelefono.Text, txtUsuario.Text, 
-                                               Convert.ToString(cmbIdioma.SelectedValue), Convert.ToString(cmbFamilia.SelectedValue),usuarioEnSesion, usuarioEnSesionDNI);
+                                               Convert.ToString(cmbIdioma.SelectedValue), Convert.ToString(cmbFamilia.SelectedValue),usuarioEnSesion, usuarioEnSesionDNI,txtcontrasenia.Text);
                         //limpiar();
                         result = MessageBox.Show(msg2, title, buttons2, icon2);
                         this.Close();
@@ -150,6 +150,11 @@ namespace The_Hight_School_Of_Avellaneda_System
             setComboIdiomas();
             setComboFamilias();
             txtDNI.Focus();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

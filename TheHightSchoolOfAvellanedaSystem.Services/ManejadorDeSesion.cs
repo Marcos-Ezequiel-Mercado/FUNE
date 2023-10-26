@@ -58,6 +58,21 @@ namespace TheHightSchoolOfAvellanedaSystem.Services
 
             return false;
         }
+
+        public bool IsAdmin()
+        {
+            foreach (var item in _usuario.patentes)
+            {
+                if (item.ToString().Equals(TipoPermiso.admin.ToString()))
+                {
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
+
     }
 
 }

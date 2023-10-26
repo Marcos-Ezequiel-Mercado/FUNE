@@ -3,7 +3,8 @@
     public enum TipoPermiso
     {
        seguridad,
-       preceptoria        
+       preceptoria,
+       admin
     }
 
 }
