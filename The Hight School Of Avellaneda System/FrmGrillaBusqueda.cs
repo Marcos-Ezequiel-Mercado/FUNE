@@ -63,13 +63,9 @@ namespace The_Hight_School_Of_Avellaneda_System
         private Filtro crearObjetoFiltro()
         {
             Filtro filtro = new Filtro();
-            filtro.nombre = txtNombre.Text;
-            filtro.madre = txtMadre.Text;
-            filtro.padre = txtPadre.Text;
-            filtro.conyuge = txtConyugue.Text;
-            filtro.documento = txtDocumento.Text;
-            filtro.fechaDeNacimiento = txtFallecimiento.Text;
-            filtro.domicilio = txtDomicilio.Text;
+            filtro.Nombre = txtNombre.Text;
+            filtro.Responsable = txtResponsable.Text;
+            filtro.FechaDeNacimiento = txtFallecimiento.Text;
 
             return filtro;
         }
@@ -79,9 +75,10 @@ namespace The_Hight_School_Of_Avellaneda_System
             return  !nombreColumna.Equals("Nombre") &&
                     !nombreColumna.Equals("Sexo") &&
                     !nombreColumna.Equals("FechaDeNacimiento") &&
-                    !nombreColumna.Equals("Hora") &&
-                    !nombreColumna.Equals("Padre") &&
-                    !nombreColumna.Equals("Madre") &&
+                    !nombreColumna.Equals("FechaDeFallecimiento") &&
+                    !nombreColumna.Equals("HoraDeFallecimiento") &&
+                    !nombreColumna.Equals("LugarDeFallecimiento") &&
+                    !nombreColumna.Equals("Responsable") &&
                     !nombreColumna.Equals("Documento") &&
                     !nombreColumna.Equals("Cementerio");
         }
@@ -153,23 +150,7 @@ namespace The_Hight_School_Of_Avellaneda_System
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
-            
-                txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "" )
-            {
-                btnBuscar.Enabled = true;
-            }
-            else
-            {
-                btnBuscar.Enabled = false;
-            }
-        }
-
-        private void txtConyugue_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
-
-               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            if (txtNombre.Text != "" || txtResponsable.Text != ""  ||  txtFallecimiento.Text != "")
             {
                 btnBuscar.Enabled = true;
             }
@@ -181,9 +162,7 @@ namespace The_Hight_School_Of_Avellaneda_System
 
         private void txtDocumento_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
-
-               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            if (txtNombre.Text != "" || txtResponsable.Text != "" || txtFallecimiento.Text != "" )
             {
                 btnBuscar.Enabled = true;
             }
@@ -195,51 +174,7 @@ namespace The_Hight_School_Of_Avellaneda_System
 
         private void txtFallecimiento_TextChanged(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
-
-               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
-            {
-                btnBuscar.Enabled = true;
-            }
-            else
-            {
-                btnBuscar.Enabled = false;
-            }
-        }
-
-        private void txtMadre_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
-
-               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
-            {
-                btnBuscar.Enabled = true;
-            }
-            else
-            {
-                btnBuscar.Enabled = false;
-            }
-        }
-
-        private void txtPadre_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
-
-               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
-            {
-                btnBuscar.Enabled = true;
-            }
-            else
-            {
-                btnBuscar.Enabled = false;
-            }
-        }
-
-        private void txtDomicilio_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNombre.Text != "" || txtDocumento.Text != "" || txtDomicilio.Text != "" || txtConyugue.Text != "" ||
-
-               txtFallecimiento.Text != "" || txtMadre.Text != "" || txtPadre.Text != "")
+            if (txtNombre.Text != "" || txtResponsable.Text != "" || txtFallecimiento.Text != "" )
             {
                 btnBuscar.Enabled = true;
             }
