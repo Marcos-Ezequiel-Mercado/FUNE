@@ -12,26 +12,17 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
         {
         }
 
-        public Filtro(string nombre, string fechaDeNacimiento, string conyuge, string padre, string madre,
-            string documento, string domicilio)
+        public Filtro(string nombre, string fechaDeNacimiento, string responsable)
         {
-            this.nombre = nombre;
-            this.fechaDeNacimiento = fechaDeNacimiento;
-            this.conyuge = conyuge;
-            this.padre = padre;
-            this.madre = madre;
-            this.documento = documento;
-            this.domicilio = domicilio;
+            this.Nombre = nombre;
+            this.FechaDeNacimiento = fechaDeNacimiento;
+            this.Responsable = responsable;
         }
 
 
-        public string nombre { get; set; }
-        public string fechaDeNacimiento { get; set; }
-        public string conyuge { get; set; }
-        public string padre { get; set; }
-        public string madre { get; set; }
-        public string documento { get; set; }
-        public string domicilio { get; set; }
+        public string Nombre { get; set; }
+        public string FechaDeNacimiento { get; set; }
+        public string Responsable { get; set; }
 
     }
 }

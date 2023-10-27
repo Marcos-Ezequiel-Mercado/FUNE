@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Filtros = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.txtFallecimiento = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtConyugue = new System.Windows.Forms.TextBox();
-            this.txtMadre = new System.Windows.Forms.TextBox();
-            this.txtPadre = new System.Windows.Forms.TextBox();
-            this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.txtResponsable = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblCantResultados = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,26 +55,18 @@
             this.Filtros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Filtros.Controls.Add(this.button1);
-            this.Filtros.Controls.Add(this.label7);
-            this.Filtros.Controls.Add(this.txtDomicilio);
             this.Filtros.Controls.Add(this.txtFallecimiento);
             this.Filtros.Controls.Add(this.btnBuscar);
             this.Filtros.Controls.Add(this.label6);
             this.Filtros.Controls.Add(this.label5);
-            this.Filtros.Controls.Add(this.label4);
-            this.Filtros.Controls.Add(this.label3);
-            this.Filtros.Controls.Add(this.label2);
             this.Filtros.Controls.Add(this.label1);
-            this.Filtros.Controls.Add(this.txtConyugue);
-            this.Filtros.Controls.Add(this.txtMadre);
-            this.Filtros.Controls.Add(this.txtPadre);
-            this.Filtros.Controls.Add(this.txtDocumento);
+            this.Filtros.Controls.Add(this.txtResponsable);
             this.Filtros.Controls.Add(this.txtNombre);
             this.Filtros.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filtros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Filtros.Location = new System.Drawing.Point(12, 12);
             this.Filtros.Name = "Filtros";
-            this.Filtros.Size = new System.Drawing.Size(1204, 248);
+            this.Filtros.Size = new System.Drawing.Size(1253, 154);
             this.Filtros.TabIndex = 0;
             this.Filtros.TabStop = false;
             this.Filtros.Text = "---FILTROS---";
@@ -95,7 +79,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(748, 196);
+            this.button1.Location = new System.Drawing.Point(958, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 40);
             this.button1.TabIndex = 15;
@@ -104,34 +88,12 @@
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button1_KeyDown);
             // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(611, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 15);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Domicilio =";
-            // 
-            // txtDomicilio
-            // 
-            this.txtDomicilio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDomicilio.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomicilio.Location = new System.Drawing.Point(614, 148);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(556, 27);
-            this.txtDomicilio.TabIndex = 13;
-            this.txtDomicilio.TextChanged += new System.EventHandler(this.txtDomicilio_TextChanged);
-            // 
             // txtFallecimiento
             // 
             this.txtFallecimiento.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFallecimiento.Location = new System.Drawing.Point(34, 196);
+            this.txtFallecimiento.Location = new System.Drawing.Point(578, 48);
             this.txtFallecimiento.Name = "txtFallecimiento";
-            this.txtFallecimiento.Size = new System.Drawing.Size(556, 27);
+            this.txtFallecimiento.Size = new System.Drawing.Size(98, 27);
             this.txtFallecimiento.TabIndex = 12;
             this.txtFallecimiento.TextChanged += new System.EventHandler(this.txtFallecimiento_TextChanged);
             // 
@@ -143,7 +105,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBuscar.Location = new System.Drawing.Point(969, 196);
+            this.btnBuscar.Location = new System.Drawing.Point(958, 31);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(200, 40);
             this.btnBuscar.TabIndex = 6;
@@ -157,7 +119,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(31, 178);
+            this.label6.Location = new System.Drawing.Point(575, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 15);
             this.label6.TabIndex = 11;
@@ -168,102 +130,38 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(31, 130);
+            this.label5.Location = new System.Drawing.Point(72, 87);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 15);
+            this.label5.Size = new System.Drawing.Size(84, 15);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Documento = ";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(612, 82);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 15);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Padre = ";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(611, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 15);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Madre =";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(31, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 15);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Conyugue =";
+            this.label5.Text = "Reponsable = ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(31, 34);
+            this.label1.Location = new System.Drawing.Point(72, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.Size = new System.Drawing.Size(132, 15);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Nombre =";
+            this.label1.Text = "Nombre del fallecido =";
             // 
-            // txtConyugue
+            // txtResponsable
             // 
-            this.txtConyugue.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConyugue.Location = new System.Drawing.Point(34, 100);
-            this.txtConyugue.Name = "txtConyugue";
-            this.txtConyugue.Size = new System.Drawing.Size(556, 27);
-            this.txtConyugue.TabIndex = 3;
-            this.txtConyugue.TextChanged += new System.EventHandler(this.txtConyugue_TextChanged);
-            // 
-            // txtMadre
-            // 
-            this.txtMadre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMadre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMadre.Location = new System.Drawing.Point(614, 52);
-            this.txtMadre.Name = "txtMadre";
-            this.txtMadre.Size = new System.Drawing.Size(556, 27);
-            this.txtMadre.TabIndex = 1;
-            this.txtMadre.TextChanged += new System.EventHandler(this.txtMadre_TextChanged);
-            // 
-            // txtPadre
-            // 
-            this.txtPadre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPadre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPadre.Location = new System.Drawing.Point(614, 100);
-            this.txtPadre.Name = "txtPadre";
-            this.txtPadre.Size = new System.Drawing.Size(555, 27);
-            this.txtPadre.TabIndex = 4;
-            this.txtPadre.TextChanged += new System.EventHandler(this.txtPadre_TextChanged);
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.Location = new System.Drawing.Point(34, 148);
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(556, 27);
-            this.txtDocumento.TabIndex = 2;
-            this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
+            this.txtResponsable.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtResponsable.Location = new System.Drawing.Point(75, 105);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(474, 27);
+            this.txtResponsable.TabIndex = 2;
+            this.txtResponsable.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(34, 52);
+            this.txtNombre.Location = new System.Drawing.Point(75, 48);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(556, 27);
+            this.txtNombre.Size = new System.Drawing.Size(474, 27);
             this.txtNombre.TabIndex = 0;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -302,45 +200,45 @@
             this.dgvGrillaResultados.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
             this.dgvGrillaResultados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvGrillaResultados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGrillaResultados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGrillaResultados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGrillaResultados.ColumnHeadersHeight = 30;
             this.dgvGrillaResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGrillaResultados.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Candara Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGrillaResultados.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGrillaResultados.EnableHeadersVisualStyles = false;
             this.dgvGrillaResultados.GridColor = System.Drawing.Color.MediumSlateBlue;
-            this.dgvGrillaResultados.Location = new System.Drawing.Point(12, 266);
+            this.dgvGrillaResultados.Location = new System.Drawing.Point(12, 172);
             this.dgvGrillaResultados.Name = "dgvGrillaResultados";
             this.dgvGrillaResultados.ReadOnly = true;
             this.dgvGrillaResultados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGrillaResultados.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGrillaResultados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGrillaResultados.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvGrillaResultados.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvGrillaResultados.Size = new System.Drawing.Size(1204, 337);
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvGrillaResultados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvGrillaResultados.Size = new System.Drawing.Size(1253, 431);
             this.dgvGrillaResultados.TabIndex = 7;
             this.dgvGrillaResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrillaResultados_CellDoubleClick);
             // 
@@ -354,14 +252,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1228, 638);
+            this.panel1.Size = new System.Drawing.Size(1277, 638);
             this.panel1.TabIndex = 10;
             // 
             // FrmGrillaBusqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 638);
+            this.ClientSize = new System.Drawing.Size(1277, 638);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmGrillaBusqueda";
@@ -382,20 +280,12 @@
         private System.Windows.Forms.GroupBox Filtros;
         private System.Windows.Forms.DataGridView dgvGrillaResultados;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtConyugue;
-        private System.Windows.Forms.TextBox txtMadre;
-        private System.Windows.Forms.TextBox txtPadre;
-        private System.Windows.Forms.TextBox txtDocumento;
+        private System.Windows.Forms.TextBox txtResponsable;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFallecimiento;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblCantResultados;
         private System.Windows.Forms.Panel panel1;

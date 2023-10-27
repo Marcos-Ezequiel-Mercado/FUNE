@@ -121,13 +121,9 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
         {
            return new
             {
-                filtro.nombre,
-                fecha_fallecimiento = filtro.fechaDeNacimiento,
-                filtro.conyuge,
-                filtro.padre,
-                filtro.madre,
-                filtro.domicilio,
-                filtro.documento
+                filtro.Nombre,
+                fecha_fallecimiento = filtro.FechaDeNacimiento,
+                filtro.Responsable
             };
         }
 
