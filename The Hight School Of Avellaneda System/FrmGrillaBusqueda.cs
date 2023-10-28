@@ -21,6 +21,7 @@ namespace The_Hight_School_Of_Avellaneda_System
         public FrmGrillaBusqueda(frmMain frmMain)
         {
             InitializeComponent();
+            this.txtNombre.Focus();
             servicioDeBusqueda = new FichasService();
             lblCantResultados.Text = "0  fichas.";
             this.frmPrincipal = frmMain;

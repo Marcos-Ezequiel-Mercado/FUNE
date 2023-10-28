@@ -21,12 +21,12 @@ namespace The_Hight_School_Of_Avellaneda_System
         {
             _login= new LoginAppService();
             InitializeComponent();
-
+            this.txtUsername.Focus();
             this.KeyPreview = true;
             this.KeyDown += BtnIngresar_KeyDown;
-            this.KeyDown += FrmLogin_KeyDown;
+            this.KeyDown += FrmLogin_KeyDown;            
         }
-
+        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
