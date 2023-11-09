@@ -66,7 +66,7 @@ namespace The_Hight_School_Of_Avellaneda_System
 
             ficha.Nombre = txtNombre.Text;
             ficha.Documento = txtDocumento.Text;
-            ficha.FechaDeNacimiento = dtpNacimiento.Value.ToShortDateString();
+            ficha.FechaDeNacimiento = dtpNacimiento.Value.ToString("yyyy/MM/dd");
             ficha.Edad = txtEdad.Text;
             ficha.Sexo = cmbSexo.Text;
             ficha.Domicilio = txtDomicilio.Text;
@@ -83,14 +83,14 @@ namespace The_Hight_School_Of_Avellaneda_System
             ficha.Responsable = txtResponsable.Text;
             ficha.DomicilioResponsable = txtdomicilio2.Text;
             ficha.DocumentoResponsable = txtDocumento2.Text;
-            ficha.FechaDeFallecimiento = dtpFechaFalle.Value.ToShortDateString(); ;
+            ficha.FechaDeFallecimiento = dtpFechaFalle.Value.ToString("yyyy/MM/dd");
             ficha.HoraDeFallecimiento = dtpHoraFalle.Value.ToShortTimeString();
             ficha.LugarDeFallecimiento = txtUbicacion.Text;
             ficha.Medico = txtMedico.Text;
             ficha.Diagnostico = txtDiagnostico.Text;
             ficha.Estudios = txtEstudios.Text;
             ficha.Importe = txtImporte.Text;
-            ficha.FechaInh = dtpFechaInh.Value.ToShortDateString();
+            ficha.FechaInh = dtpFechaInh.Value.ToString("yyyy/MM/dd");
             ficha.HoraInh = dtpHoraInh.Value.ToShortDateString();
             ficha.Ataud = txtAtaud.Text;
             ficha.Cementerio = txtCementerio.Text;
@@ -104,6 +104,7 @@ namespace The_Hight_School_Of_Avellaneda_System
             ficha.Muertos = txtMuertos.Text;
             ficha.PesoNacer = txtPesoNacer.Text;
             ficha.PesoMorir = txtPesoMorir.Text;
+            ficha.TelResponsable = txtTelResponsable.Text;
 
             return ficha;
         }

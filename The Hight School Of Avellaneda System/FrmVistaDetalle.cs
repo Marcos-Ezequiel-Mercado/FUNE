@@ -31,51 +31,16 @@ namespace The_Hight_School_Of_Avellaneda_System
             this.KeyDown += btnEditar_KeyDown;
             this.KeyDown += button1_KeyDown;
 
-            lblId.Text = ficha.Id.ToString();       
-            txtNombre.Text = ficha.Nombre.ToString();
-            txtResponsable.Text = ficha.Responsable.ToString();
-            txtSexo.Text = ficha.Sexo.ToString();
-            txtEstudios.Text = ficha.Estudios.ToString();
-            txtFechaNaci.Text = ficha.FechaDeNacimiento.ToString();
-            txtFechaFalle.Text = ficha.FechaDeFallecimiento.ToString();
-            txtHoraFalle.Text = ficha.HoraDeFallecimiento.ToString();
-            txtUbicacion.Text = ficha.LugarDeFallecimiento.ToString();
-            txtEdad.Text = ficha.Edad.ToString();
-            txtECivil.Text = ficha.EstadoCivil.ToString();
-            txtConyuge.Text = ficha.Conyugue.ToString();
-            txtPadre.Text = ficha.Padre.ToString();
-            txtMadre.Text = ficha.Madre.ToString();
-            txtDomicilio.Text = ficha.Domicilio.ToString();
-            txtLocalidad.Text = ficha.Partido.ToString();
-            txtNacionalidad.Text = ficha.Nacionalidad.ToString();
-            txtProvincia.Text = ficha.Provincia.ToString();
-            txtDocumento.Text = ficha.Documento.ToString();
-            txtProfesion.Text = ficha.Profesion.ToString();
-            txtMedico.Text = ficha.Medico.ToString();
-            txtDiagnostico.Text = ficha.Diagnostico.ToString();
-            txtRegistroCivil.Text = ficha.RegistroCivil.ToString();
-            txtCementerio.Text = ficha.Cementerio.ToString();
-            txtHoraInh.Text = ficha.HoraInh.ToString();
-            txtFechaInh.Text = ficha.FechaInh.ToString();
-            txtBeneficios.Text = ficha.Beneficios.ToString();
-            txtCodigoPostal.Text = ficha.CodigoPostal.ToString();
-            txtdomicilio2.Text = ficha.DomicilioResponsable.ToString();
-            txtDocumento2.Text = ficha.DocumentoResponsable.ToString();
-            txtGastos.Text = ficha.Gastos.ToString();
-            lblUsuario.Text = ficha.Usuario.ToString();
-            txtImporte.Text = ficha.Importe.ToString();
-            txtResponsable.Text = ficha.Responsable.ToString();
+            this.cargarFormulario(ficha);
 
             this.activarTodosLosTextBox(this, false);
             btnGuardar.Enabled = false;
-            
-
-
-
-            btnEliminar.Enabled = ManejadorDeSesion.GetInstance.IsAdmin();
-            
+ 
+            btnEliminar.Enabled = ManejadorDeSesion.GetInstance.IsAdmin();        
 
         }
+
+     
 
         private void activarTodosLosTextBox(Control control, bool enabled)
         {
@@ -130,7 +95,21 @@ namespace The_Hight_School_Of_Avellaneda_System
             lblUsuario.Text,
             txtAtaud.Text,
             txtResponsable.Text,
+            txtSitConyu.Text,
             txtTelResponsable.Text);
+
+            ficha.FechaDeFallecimiento = txtFechaFalle.Text;
+            ficha.HoraDeFallecimiento = txtHoraFalle.Text;
+            ficha.FechaInh = txtFechaInh.Text;
+            ficha.HoraInh = txtHoraInh.Text;
+            ficha.Embarazos = txtEmbarazo.Text;
+            ficha.EdadMadre = txtEdadMadre.Text;
+            ficha.Vivos = txtVivos.Text;
+            ficha.Muertos = txtMuertos.Text;
+
+            ficha.PesoNacer = txtPesoNacer.Text;
+            ficha.PesoMorir = txtPesoMorir.Text;
+
             return ficha;
         }
 
@@ -150,11 +129,13 @@ namespace The_Hight_School_Of_Avellaneda_System
             {
                 if (this.fichaService.editarFichaService(ficha))
                 {
+                    activarTodosLosTextBox(this,false);
                     DialogResult result = MessageBox.Show("Se edito con exito! ¿Deseas seguir editando esta ficha?", "Confirmación", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.No)
                     {
                         this.Close();
+                        this.main.Show();
                     }
                     else
                     {
@@ -181,6 +162,7 @@ namespace The_Hight_School_Of_Avellaneda_System
                     this.fichaService.eliminarFicha(lblId.Text);
                     MessageBox.Show("Se elimino con exito!", "Confirmación", 0, MessageBoxIcon.Information);
                     this.Close();
+                    this.main.Show();
                 }
             }
             catch (Exception ex)
@@ -199,7 +181,7 @@ namespace The_Hight_School_Of_Avellaneda_System
         {
             if (e.KeyCode == Keys.Escape)
             {
-                // Simula un clic en el botón cuando se presiona Enter
+                // Simula un clic en el botón cuando se presiona Escape
                 this.main.Show();
                 this.Close();
             }
@@ -243,6 +225,411 @@ namespace The_Hight_School_Of_Avellaneda_System
             //panelEscritrio.Tag = children;
             children.BringToFront();
             children.Show();
+        }
+
+        private void cargarFormulario(Ficha ficha)
+        {
+         
+            if (ficha.Id != null) {
+                lblId.Text = ficha.Id.ToString();
+            }
+            else
+            {
+                lblId.Text = "";
+            }
+
+
+            if (ficha.Nombre != null)
+            {
+
+                txtNombre.Text = ficha.Nombre.ToString();
+            }
+            else
+            {
+                txtNombre.Text = "";
+            }
+
+
+            if (ficha.Responsable != null)
+            {
+                txtResponsable.Text = ficha.Responsable.ToString();
+            }
+            else
+            {
+                txtResponsable.Text = "";
+            }
+
+
+            if (ficha.Sexo != null)
+            {
+                txtSexo.Text = ficha.Sexo.ToString();
+            }
+            else
+            {
+                txtSexo.Text = "";
+            }
+
+
+            if (ficha.Estudios != null)
+            {
+                txtEstudios.Text = ficha.Estudios.ToString();
+            }
+            else
+            {
+                txtEstudios.Text = "";
+            }
+
+
+            if (ficha.FechaDeNacimiento != null)
+            {
+                txtFechaNaci.Text = ficha.FechaDeNacimiento.ToString();
+            }
+            else
+            {
+                txtFechaNaci.Text = "";
+            }
+
+
+            if (ficha.FechaDeFallecimiento != null)
+            {
+                txtFechaFalle.Text = ficha.FechaDeFallecimiento.ToString();
+            }
+            else
+            {
+                txtFechaFalle.Text = "";
+            }
+
+
+            if (ficha.HoraDeFallecimiento != null)
+            {
+                txtHoraFalle.Text = ficha.HoraDeFallecimiento.ToString();
+            }
+            else
+            {
+                txtHoraFalle.Text = "";
+            }
+
+
+            if (ficha.LugarDeFallecimiento != null)
+            {
+                txtUbicacion.Text = ficha.LugarDeFallecimiento.ToString();
+            }
+            else
+            {
+                txtUbicacion.Text = "";
+            }
+
+
+            if (ficha.Edad != null)
+            {
+                txtEdad.Text = ficha.Edad.ToString();
+            }
+            else
+            {
+                txtEdad.Text = "";
+            }
+
+
+            if (ficha.EstadoCivil != null)
+            {
+                txtECivil.Text = ficha.EstadoCivil.ToString();
+            }
+            else
+            {
+                txtECivil.Text = "";
+            }
+
+
+            if (ficha.Conyugue != null)
+            {
+                txtConyuge.Text = ficha.Conyugue.ToString();
+            }
+            else
+            {
+                txtConyuge.Text = "";
+            }
+
+
+            if (ficha.Padre != null)
+            {
+                txtPadre.Text = ficha.Padre.ToString();
+            }
+            else
+            {
+                txtPadre.Text = "";
+            }
+
+
+            if (ficha.Madre != null)
+            {
+                txtMadre.Text = ficha.Madre.ToString();
+            }
+            else
+            {
+                txtMadre.Text = "";
+            }
+
+
+            if (ficha.Domicilio != null)
+            {
+                txtDomicilio.Text = ficha.Domicilio.ToString();
+            }
+            else
+            {
+                txtDomicilio.Text = "";
+            }
+
+            if (ficha.Partido != null)
+            {
+                txtLocalidad.Text = ficha.Partido.ToString();
+            }
+            else
+            {
+                txtLocalidad.Text = "";
+            }
+
+            if (ficha.Nacionalidad != null)
+            {
+                txtNacionalidad.Text = ficha.Nacionalidad.ToString();
+            }
+            else
+            {
+                txtNacionalidad.Text = "";
+            }
+
+
+            if (ficha.Provincia  != null)
+            {
+                txtProvincia.Text = ficha.Provincia.ToString();
+            }
+            else
+            {
+                txtProvincia.Text = "";
+            }
+
+            if (ficha.Documento != null)
+            {
+                txtDocumento.Text = ficha.Documento.ToString();
+            }
+            else
+            {
+                txtDocumento.Text = "";
+            }
+
+
+            if (ficha.Profesion != null)
+            {
+                txtProfesion.Text = ficha.Profesion.ToString();
+            }
+            else
+            {
+                txtProfesion.Text = "";
+            }
+
+
+            if (ficha.Medico != null)
+            {
+                txtMedico.Text = ficha.Medico.ToString();
+            }
+            else
+            {
+                txtMedico.Text = "";
+            }
+
+
+            if (ficha.Diagnostico != null)
+            {
+                txtDiagnostico.Text = ficha.Diagnostico.ToString();
+            }
+            else
+            {
+                txtDiagnostico.Text = "";
+            }
+
+
+            if (ficha.RegistroCivil != null)
+            {
+                txtRegistroCivil.Text = ficha.RegistroCivil.ToString();
+            }
+            else
+            {
+                txtRegistroCivil.Text = "";
+            }
+
+
+            if (ficha.Cementerio != null)
+            {
+                txtCementerio.Text = ficha.Cementerio.ToString();
+            }
+            else
+            {
+                txtCementerio.Text = "";
+            }
+
+            if (ficha.HoraInh != null)
+            {
+                txtHoraInh.Text = ficha.HoraInh.ToString();
+            }
+            else
+            {
+                txtHoraInh.Text = "";
+            }
+
+
+            if (ficha.FechaInh != null)
+            {
+                txtFechaInh.Text = ficha.FechaInh.ToString();
+            }
+            else
+            {
+                txtFechaInh.Text = "";
+            }
+
+
+            if (ficha.Beneficios != null)
+            {
+                txtBeneficios.Text = ficha.Beneficios.ToString();
+            }
+            else
+            {
+                txtBeneficios.Text = "";
+            }
+
+
+
+            if (ficha.CodigoPostal != null)
+            {
+                txtCodigoPostal.Text = ficha.CodigoPostal.ToString();
+            }
+            else
+            {
+                txtCodigoPostal.Text = "";
+            }
+
+            if (ficha.DomicilioResponsable != null)
+            {
+                txtdomicilio2.Text = ficha.DomicilioResponsable.ToString();
+            }
+            else
+            {
+                txtdomicilio2.Text = "";
+            }
+
+
+            if (ficha.DocumentoResponsable != null)
+            {
+                txtDocumento2.Text = ficha.DocumentoResponsable.ToString();
+            }
+            else
+            {
+                txtDocumento2.Text = "";
+            }
+
+            if (ficha.Gastos != null)
+            {
+                txtGastos.Text = ficha.Gastos.ToString();
+            }
+            else
+            {
+                txtGastos.Text = "";
+            }
+
+
+            if (ficha.Usuario != null)
+            {
+                lblUsuario.Text = ficha.Usuario.ToString();
+            }
+            else
+            {
+                lblUsuario.Text = "";
+            }
+
+            if (ficha.Importe != null)
+            {
+                txtImporte.Text = ficha.Importe.ToString();
+            }
+            else
+            {
+                txtImporte.Text = "";
+            }
+
+
+            if (ficha.Responsable != null)
+            {
+                txtResponsable.Text = ficha.Responsable.ToString();
+            }
+            else
+            {
+                txtResponsable.Text = "";
+            }
+
+
+            if (ficha.TelResponsable != null)
+            {
+                txtTelResponsable.Text = ficha.TelResponsable.ToString();
+            }
+            else
+            {
+                txtTelResponsable.Text = "";
+            }
+
+            if (ficha.Vivos != null)
+            {
+                txtVivos.Text = ficha.Vivos.ToString();
+            }
+            else
+            {
+                txtVivos.Text = "";
+            }
+
+            if (ficha.Muertos != null)
+            {
+                txtMuertos.Text = ficha.Muertos.ToString();
+            }
+            else
+            {
+                txtMuertos.Text = "";
+            }
+            if (ficha.EdadMadre != null)
+            {
+                txtEdadMadre.Text = ficha.EdadMadre.ToString();
+            }
+            else
+            {
+                txtEdadMadre.Text = "";
+            }
+            if (ficha.Embarazos != null)
+            {
+                txtEmbarazo.Text = ficha.Embarazos.ToString();
+            }
+            else
+            {
+                txtEmbarazo.Text = "";
+            }
+            if (ficha.PesoMorir != null)
+            {
+                txtPesoMorir.Text = ficha.PesoMorir.ToString();
+            }
+            else
+            {
+                txtPesoMorir.Text = "";
+            }
+            if (ficha.PesoNacer != null)
+            {
+                txtPesoNacer.Text = ficha.PesoNacer.ToString();
+            }
+            else
+            {
+                txtPesoNacer.Text = "";
+            }
+            if (ficha.SitConyugal != null)
+            {
+                txtSitConyu.Text = ficha.SitConyugal.ToString();
+            }
+            else
+            {
+                txtSitConyu.Text = "";
+            }
         }
     }
 }

@@ -106,7 +106,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
             try
             {
 
-                var parametros = this.crearParametrosParaBusquedaDeFichas(filtro);
+                var parametros = this.crearParametrosParaBusquedaDeFichas(filtro,0);
 
                 return (List<Ficha>) masterConexion.GetEntities<Ficha>(procesoBusquedaFichas,parametros);
 
@@ -117,10 +117,11 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
             }
         }
 
-        private Object crearParametrosParaBusquedaDeFichas(Filtro filtro)
+        private Object crearParametrosParaBusquedaDeFichas(Filtro filtro,int ultimo)
         {
-           return new
+            return new
             {
+                @thelast = ultimo,
                 filtro.Nombre,
                 fecha_fallecimiento = filtro.FechaDeNacimiento,
                 filtro.Responsable
@@ -191,8 +192,16 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
                 @MUERTOS = ficha.Muertos,
                 @PESONACER = ficha.PesoNacer,
                 @PESOMORIR = ficha.PesoMorir,
-                @TEL_RESPONSABLE = ficha.TelResponsable
+                @TELRESPONSABLE = ficha.TelResponsable
             };
-        }    
+        }
+
+        public Ficha ultimaFicha()
+        {
+            Filtro filtro = new Filtro();
+            var parametros = crearParametrosParaBusquedaDeFichas(filtro, 1);
+
+            return masterConexion.GetEntity<Ficha>(procesoBusquedaFichas, parametros);
+        }
     }
 }

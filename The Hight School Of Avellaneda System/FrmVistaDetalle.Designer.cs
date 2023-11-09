@@ -34,6 +34,20 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtSitConyu = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtPesoNacer = new System.Windows.Forms.TextBox();
+            this.lblPesoNacer = new System.Windows.Forms.Label();
+            this.lblVivos = new System.Windows.Forms.Label();
+            this.txtMuertos = new System.Windows.Forms.TextBox();
+            this.txtEdadMadre = new System.Windows.Forms.TextBox();
+            this.lblEdadMadre = new System.Windows.Forms.Label();
+            this.txtPesoMorir = new System.Windows.Forms.TextBox();
+            this.lblPesoMorir = new System.Windows.Forms.Label();
+            this.lblMuertos = new System.Windows.Forms.Label();
+            this.txtVivos = new System.Windows.Forms.TextBox();
+            this.lblEmbarazo = new System.Windows.Forms.Label();
+            this.txtEmbarazo = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtSexo = new System.Windows.Forms.TextBox();
@@ -112,20 +126,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.txtPesoNacer = new System.Windows.Forms.TextBox();
-            this.lblPesoNacer = new System.Windows.Forms.Label();
-            this.lblVivos = new System.Windows.Forms.Label();
-            this.txtMuertos = new System.Windows.Forms.TextBox();
-            this.txtEdadMadre = new System.Windows.Forms.TextBox();
-            this.lblEdadMadre = new System.Windows.Forms.Label();
-            this.txtPesoMorir = new System.Windows.Forms.TextBox();
-            this.lblPesoMorir = new System.Windows.Forms.Label();
-            this.lblMuertos = new System.Windows.Forms.Label();
-            this.txtVivos = new System.Windows.Forms.TextBox();
-            this.lblEmbarazo = new System.Windows.Forms.Label();
-            this.txtEmbarazo = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -184,7 +184,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.SlateBlue;
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txtSitConyu);
             this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.txtPesoNacer);
             this.groupBox3.Controls.Add(this.lblPesoNacer);
@@ -276,6 +276,158 @@
             this.groupBox3.TabIndex = 290;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DATOS EDITABLES";
+            // 
+            // txtSitConyu
+            // 
+            this.txtSitConyu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtSitConyu.Location = new System.Drawing.Point(343, 583);
+            this.txtSitConyu.Name = "txtSitConyu";
+            this.txtSitConyu.Size = new System.Drawing.Size(321, 27);
+            this.txtSitConyu.TabIndex = 350;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label25.Location = new System.Drawing.Point(343, 565);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(87, 15);
+            this.label25.TabIndex = 349;
+            this.label25.Text = "Sit. conyugal =";
+            // 
+            // txtPesoNacer
+            // 
+            this.txtPesoNacer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesoNacer.Location = new System.Drawing.Point(670, 441);
+            this.txtPesoNacer.Name = "txtPesoNacer";
+            this.txtPesoNacer.Size = new System.Drawing.Size(100, 27);
+            this.txtPesoNacer.TabIndex = 348;
+            // 
+            // lblPesoNacer
+            // 
+            this.lblPesoNacer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPesoNacer.AutoSize = true;
+            this.lblPesoNacer.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoNacer.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPesoNacer.Location = new System.Drawing.Point(670, 423);
+            this.lblPesoNacer.Name = "lblPesoNacer";
+            this.lblPesoNacer.Size = new System.Drawing.Size(89, 15);
+            this.lblPesoNacer.TabIndex = 347;
+            this.lblPesoNacer.Text = "Peso al nacer =";
+            // 
+            // lblVivos
+            // 
+            this.lblVivos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVivos.AutoSize = true;
+            this.lblVivos.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVivos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblVivos.Location = new System.Drawing.Point(670, 326);
+            this.lblVivos.Name = "lblVivos";
+            this.lblVivos.Size = new System.Drawing.Size(45, 15);
+            this.lblVivos.TabIndex = 338;
+            this.lblVivos.Text = "Vivos =";
+            // 
+            // txtMuertos
+            // 
+            this.txtMuertos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMuertos.Location = new System.Drawing.Point(670, 392);
+            this.txtMuertos.Name = "txtMuertos";
+            this.txtMuertos.Size = new System.Drawing.Size(100, 27);
+            this.txtMuertos.TabIndex = 345;
+            // 
+            // txtEdadMadre
+            // 
+            this.txtEdadMadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEdadMadre.Location = new System.Drawing.Point(670, 296);
+            this.txtEdadMadre.Name = "txtEdadMadre";
+            this.txtEdadMadre.Size = new System.Drawing.Size(100, 27);
+            this.txtEdadMadre.TabIndex = 344;
+            // 
+            // lblEdadMadre
+            // 
+            this.lblEdadMadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEdadMadre.AutoSize = true;
+            this.lblEdadMadre.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdadMadre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblEdadMadre.Location = new System.Drawing.Point(671, 275);
+            this.lblEdadMadre.Name = "lblEdadMadre";
+            this.lblEdadMadre.Size = new System.Drawing.Size(83, 15);
+            this.lblEdadMadre.TabIndex = 339;
+            this.lblEdadMadre.Text = "Edad madre =";
+            // 
+            // txtPesoMorir
+            // 
+            this.txtPesoMorir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesoMorir.Location = new System.Drawing.Point(670, 490);
+            this.txtPesoMorir.Name = "txtPesoMorir";
+            this.txtPesoMorir.Size = new System.Drawing.Size(100, 27);
+            this.txtPesoMorir.TabIndex = 346;
+            // 
+            // lblPesoMorir
+            // 
+            this.lblPesoMorir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPesoMorir.AutoSize = true;
+            this.lblPesoMorir.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoMorir.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPesoMorir.Location = new System.Drawing.Point(667, 472);
+            this.lblPesoMorir.Name = "lblPesoMorir";
+            this.lblPesoMorir.Size = new System.Drawing.Size(89, 15);
+            this.lblPesoMorir.TabIndex = 340;
+            this.lblPesoMorir.Text = "Peso al morir =";
+            // 
+            // lblMuertos
+            // 
+            this.lblMuertos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMuertos.AutoSize = true;
+            this.lblMuertos.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMuertos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblMuertos.Location = new System.Drawing.Point(670, 374);
+            this.lblMuertos.Name = "lblMuertos";
+            this.lblMuertos.Size = new System.Drawing.Size(64, 15);
+            this.lblMuertos.TabIndex = 341;
+            this.lblMuertos.Text = "Muertos =";
+            // 
+            // txtVivos
+            // 
+            this.txtVivos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtVivos.Location = new System.Drawing.Point(670, 344);
+            this.txtVivos.Name = "txtVivos";
+            this.txtVivos.Size = new System.Drawing.Size(100, 27);
+            this.txtVivos.TabIndex = 342;
+            // 
+            // lblEmbarazo
+            // 
+            this.lblEmbarazo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEmbarazo.AutoSize = true;
+            this.lblEmbarazo.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmbarazo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblEmbarazo.Location = new System.Drawing.Point(671, 227);
+            this.lblEmbarazo.Name = "lblEmbarazo";
+            this.lblEmbarazo.Size = new System.Drawing.Size(77, 15);
+            this.lblEmbarazo.TabIndex = 337;
+            this.lblEmbarazo.Text = "Embarazos =";
+            // 
+            // txtEmbarazo
+            // 
+            this.txtEmbarazo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmbarazo.Location = new System.Drawing.Point(670, 247);
+            this.txtEmbarazo.Name = "txtEmbarazo";
+            this.txtEmbarazo.Size = new System.Drawing.Size(100, 27);
+            this.txtEmbarazo.TabIndex = 343;
             // 
             // button2
             // 
@@ -1058,158 +1210,6 @@
             this.label24.TabIndex = 240;
             this.label24.Text = "Profesion =";
             // 
-            // txtPesoNacer
-            // 
-            this.txtPesoNacer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesoNacer.Location = new System.Drawing.Point(670, 441);
-            this.txtPesoNacer.Name = "txtPesoNacer";
-            this.txtPesoNacer.Size = new System.Drawing.Size(100, 27);
-            this.txtPesoNacer.TabIndex = 348;
-            // 
-            // lblPesoNacer
-            // 
-            this.lblPesoNacer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPesoNacer.AutoSize = true;
-            this.lblPesoNacer.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesoNacer.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPesoNacer.Location = new System.Drawing.Point(670, 423);
-            this.lblPesoNacer.Name = "lblPesoNacer";
-            this.lblPesoNacer.Size = new System.Drawing.Size(89, 15);
-            this.lblPesoNacer.TabIndex = 347;
-            this.lblPesoNacer.Text = "Peso al nacer =";
-            // 
-            // lblVivos
-            // 
-            this.lblVivos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblVivos.AutoSize = true;
-            this.lblVivos.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVivos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblVivos.Location = new System.Drawing.Point(670, 326);
-            this.lblVivos.Name = "lblVivos";
-            this.lblVivos.Size = new System.Drawing.Size(45, 15);
-            this.lblVivos.TabIndex = 338;
-            this.lblVivos.Text = "Vivos =";
-            // 
-            // txtMuertos
-            // 
-            this.txtMuertos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMuertos.Location = new System.Drawing.Point(670, 392);
-            this.txtMuertos.Name = "txtMuertos";
-            this.txtMuertos.Size = new System.Drawing.Size(100, 27);
-            this.txtMuertos.TabIndex = 345;
-            // 
-            // txtEdadMadre
-            // 
-            this.txtEdadMadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEdadMadre.Location = new System.Drawing.Point(670, 296);
-            this.txtEdadMadre.Name = "txtEdadMadre";
-            this.txtEdadMadre.Size = new System.Drawing.Size(100, 27);
-            this.txtEdadMadre.TabIndex = 344;
-            // 
-            // lblEdadMadre
-            // 
-            this.lblEdadMadre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEdadMadre.AutoSize = true;
-            this.lblEdadMadre.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdadMadre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblEdadMadre.Location = new System.Drawing.Point(671, 275);
-            this.lblEdadMadre.Name = "lblEdadMadre";
-            this.lblEdadMadre.Size = new System.Drawing.Size(83, 15);
-            this.lblEdadMadre.TabIndex = 339;
-            this.lblEdadMadre.Text = "Edad madre =";
-            // 
-            // txtPesoMorir
-            // 
-            this.txtPesoMorir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPesoMorir.Location = new System.Drawing.Point(670, 490);
-            this.txtPesoMorir.Name = "txtPesoMorir";
-            this.txtPesoMorir.Size = new System.Drawing.Size(100, 27);
-            this.txtPesoMorir.TabIndex = 346;
-            // 
-            // lblPesoMorir
-            // 
-            this.lblPesoMorir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPesoMorir.AutoSize = true;
-            this.lblPesoMorir.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesoMorir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPesoMorir.Location = new System.Drawing.Point(667, 472);
-            this.lblPesoMorir.Name = "lblPesoMorir";
-            this.lblPesoMorir.Size = new System.Drawing.Size(89, 15);
-            this.lblPesoMorir.TabIndex = 340;
-            this.lblPesoMorir.Text = "Peso al morir =";
-            // 
-            // lblMuertos
-            // 
-            this.lblMuertos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMuertos.AutoSize = true;
-            this.lblMuertos.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMuertos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMuertos.Location = new System.Drawing.Point(670, 374);
-            this.lblMuertos.Name = "lblMuertos";
-            this.lblMuertos.Size = new System.Drawing.Size(64, 15);
-            this.lblMuertos.TabIndex = 341;
-            this.lblMuertos.Text = "Muertos =";
-            // 
-            // txtVivos
-            // 
-            this.txtVivos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVivos.Location = new System.Drawing.Point(670, 344);
-            this.txtVivos.Name = "txtVivos";
-            this.txtVivos.Size = new System.Drawing.Size(100, 27);
-            this.txtVivos.TabIndex = 342;
-            // 
-            // lblEmbarazo
-            // 
-            this.lblEmbarazo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEmbarazo.AutoSize = true;
-            this.lblEmbarazo.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmbarazo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblEmbarazo.Location = new System.Drawing.Point(671, 227);
-            this.lblEmbarazo.Name = "lblEmbarazo";
-            this.lblEmbarazo.Size = new System.Drawing.Size(77, 15);
-            this.lblEmbarazo.TabIndex = 337;
-            this.lblEmbarazo.Text = "Embarazos =";
-            // 
-            // txtEmbarazo
-            // 
-            this.txtEmbarazo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmbarazo.Location = new System.Drawing.Point(670, 247);
-            this.txtEmbarazo.Name = "txtEmbarazo";
-            this.txtEmbarazo.Size = new System.Drawing.Size(100, 27);
-            this.txtEmbarazo.TabIndex = 343;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox1.Location = new System.Drawing.Point(343, 583);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(321, 27);
-            this.textBox1.TabIndex = 350;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label25.Location = new System.Drawing.Point(343, 565);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(87, 15);
-            this.label25.TabIndex = 349;
-            this.label25.Text = "Sit. conyugal =";
-            // 
             // FrmVistaDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1315,7 +1315,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSitConyu;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtPesoNacer;
         private System.Windows.Forms.Label lblPesoNacer;

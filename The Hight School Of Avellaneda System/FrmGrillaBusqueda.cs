@@ -18,7 +18,7 @@ namespace The_Hight_School_Of_Avellaneda_System
     {
         private FichasService servicioDeBusqueda;
         private frmMain frmPrincipal;
-        public FrmGrillaBusqueda(frmMain frmMain)
+        public FrmGrillaBusqueda(frmMain frmMain, Boolean esUltimo)
         {
             InitializeComponent();
             this.txtNombre.Focus();
@@ -31,6 +31,15 @@ namespace The_Hight_School_Of_Avellaneda_System
             this.KeyPreview = true;
             this.KeyDown += btnBuscar_KeyDown;
             this.KeyDown += button1_KeyDown;
+
+            if (esUltimo)
+            {
+                Ficha resultado = this.servicioDeBusqueda.ultmaFicha();
+                FrmVistaDetalle frmDetallesDeFicha = new FrmVistaDetalle(resultado, frmPrincipal);
+                frmPrincipal.Hide();
+                frmDetallesDeFicha.ShowDialog();
+
+            }
 
         }
 
@@ -57,7 +66,7 @@ namespace The_Hight_School_Of_Avellaneda_System
 
                 }
                 this.lblCantResultados.Text = dgvGrillaResultados.RowCount.ToString() + "  fichas.";
-                this.LimpiarTextBoxEnControles(this);
+             
             }
         }
 

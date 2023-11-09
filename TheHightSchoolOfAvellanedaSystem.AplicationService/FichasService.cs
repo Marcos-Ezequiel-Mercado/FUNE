@@ -141,4 +141,11 @@ public class FichasService
         return usuario;
 
     }
+
+    public Ficha ultmaFicha()
+    {
+        Ficha ultmaFicha = repository.ultimaFicha();
+
+        return ultmaFicha;
+    }
 }

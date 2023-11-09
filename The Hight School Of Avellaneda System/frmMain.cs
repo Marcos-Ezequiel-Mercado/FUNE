@@ -195,7 +195,7 @@ namespace The_Hight_School_Of_Avellaneda_System
         private void iconButton2_Click(object sender, EventArgs e)
         {
             activeBotton(sender, RGBColors.color1);
-            abrirFormularioHijo(new FrmGrillaBusqueda(this));
+            abrirFormularioHijo(new FrmGrillaBusqueda(this,false));
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -272,6 +272,11 @@ namespace The_Hight_School_Of_Avellaneda_System
             }
         }
 
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            activeBotton(sender, RGBColors.color1);
+            abrirFormularioHijo(new FrmGrillaBusqueda(this,true));
+        }
     }
 
 }

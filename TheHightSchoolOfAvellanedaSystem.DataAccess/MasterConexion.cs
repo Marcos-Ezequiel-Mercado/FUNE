@@ -91,6 +91,30 @@ namespace TheHightSchoolOfAvellanedaSystem.DataAccess
             }
         }
 
+        public T GetEntity<T>(String storedProcedure, Object parameters)
+        {
+            using (var connection = GetConnectionSeguridad())
+            {
+                try
+                {
+                    connection.Open();
+                    var resultado = connection
+                        .Query<T>(storedProcedure, parameters, commandType: CommandType.StoredProcedure)
+                        .First();
+
+                    return resultado;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
+        }
         public bool EditEntity<T>(string storedProcedure, Object parameters)
         {
             using (var connection = GetConnectionSeguridad())

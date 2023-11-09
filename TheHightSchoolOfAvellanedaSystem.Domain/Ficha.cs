@@ -137,7 +137,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
            string lugarDeFallecimiento, string fechaDeNacimiento, string edad, string estudios, string estadoCivil, string conyugue, string padre,
            string madre, string domicilio, string partido, string nacionalidad, string provincia, string documento, string profesion, string medico,
            string diagnostico, string registroCivil, string cementerio, string domicilioResponsable, string codigoPostal, string documentoResponsable,
-           string beneficios, string gastos,  string horaInh,string fechaInh, string usuario, string afin,string responsable, string telResponsable)
+           string beneficios, string gastos,  string horaInh,string fechaInh, string usuario, string afin,string responsable, string sitConyuga, string telResponsable)
         {
             Id = id;
             Nombre = nombre;
@@ -172,6 +172,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Domain
             Usuario = usuario;
             Afin = afin;
             Responsable = responsable;
+            SitConyugal = sitConyuga;
             TelResponsable = telResponsable;
         }
 
