@@ -151,12 +151,12 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
             return new
             {
                 @INSERT = insert,
-                @USUARIO  = idUsuario,
+                @USUARIO = idUsuario,
                 @ID_FICHA = ficha.Id,
                 @NOMBRE = ficha.Nombre,
                 @SEXO = ficha.Sexo,
                 @ESTUDIOS = ficha.Estudios,
-                @FECHANAC =ficha.FechaDeNacimiento,
+                @FECHANAC = ficha.FechaDeNacimiento,
                 @FECHAFALLE = ficha.FechaDeFallecimiento,
                 @HORAFALLE = ficha.HoraDeFallecimiento,
                 @EDAD = ficha.Edad,
@@ -167,14 +167,14 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
                 @MADRE = ficha.Madre,
                 @DOMICILIO = ficha.Domicilio,
                 @PARTIDO = ficha.Partido,
-                @NACIONAL  = ficha.Nacionalidad,
+                @NACIONAL = ficha.Nacionalidad,
                 @PROVINCIA = ficha.Provincia,
                 @DOCUMENTO = ficha.Documento,
                 @PROFESION = ficha.Profesion,
                 @MEDICO = ficha.Medico,
                 @DIAGNOSTIC = ficha.Diagnostico,
                 @REGCIVIL = ficha.RegistroCivil,
-                @CEMENTERIO= ficha.Cementerio,
+                @CEMENTERIO = ficha.Cementerio,
                 @HORAINH = ficha.HoraInh,
                 @FECHAINH = ficha.FechaInh,
                 @GASTOS = ficha.Gastos,
@@ -192,6 +192,7 @@ namespace TheHightSchoolOfAvellanedaSystem.Repository
                 @MUERTOS = ficha.Muertos,
                 @PESONACER = ficha.PesoNacer,
                 @PESOMORIR = ficha.PesoMorir,
+                @IMPORTE = ficha.Importe,
                 @TELRESPONSABLE = ficha.TelResponsable
             };
         }

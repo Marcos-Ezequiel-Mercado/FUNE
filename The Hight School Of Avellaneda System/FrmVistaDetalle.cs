@@ -630,6 +630,22 @@ namespace The_Hight_School_Of_Avellaneda_System
             {
                 txtSitConyu.Text = "";
             }
+            if (ficha.Afin != null)
+            {
+                txtAfin.Text = ficha.Afin.ToString();
+            }
+            else
+            {
+                txtAfin.Text = "";
+            }
+            if (ficha.Ataud != null)
+            {
+                txtAtaud.Text = ficha.Ataud.ToString();
+            }
+            else
+            {
+                txtAtaud.Text = "";
+            }
         }
     }
 }
